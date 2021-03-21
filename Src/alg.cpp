@@ -20,5 +20,6 @@ int cbinsearch(int *arr, int size, int value) {
   }
   if (sum!=0)
     return sum;
-  else return 0; // если ничего не найдено
+  else
+    return 0;//если ничего не найдено
 }
