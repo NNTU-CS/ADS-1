@@ -1,6 +1,6 @@
 // Copyright 2021 NNTU-CS
 
-int cbinsearch(int arr[], int size, int value) {
+int cbinsearch(int arr, int size, int value) {
 int l = 0;
 int r = size - 1;
 int mid;
