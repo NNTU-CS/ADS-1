@@ -9,10 +9,11 @@ int m = 0;
 int mid;
 while ((l <= r) && (e != value)) {
 mid = (l + r) / 2;
- if (arr[mid] == value) e = mid;
- if (arr[mid] > value) r = mid - 1;
-else 
- l = mid + 1;
+if (arr[mid] == value) e = mid;
+if (arr[mid] > value) r = mid - 1;
+else {
+l = mid + 1;
+}
 }
 e1 = e;
 while (arr[e1] == value) {
