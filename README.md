@@ -1,11 +1,17 @@
 # Алгоритмы и структуры данных (ADS-1)
 
 
+![GitHub pull requests](https://img.shields.io/github/issues-pr/NNTU-CS/ADS-1)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/NNTU-CS/ADS-1)
+
+
+
+
 Сроки выполнения задания:
 
-- **ИСТ-1,4** - **до 25 марта**
-- **ИСТ-3** - **до 30 марта**
-- **ИСТ-2** - **до 6 апреля**
+- **ИСТ-1,4** - **до 25 марта** ![Relative date](https://img.shields.io/date/1616619600)
+- **ИСТ-3** - **до 30 марта** ![Relative date](https://img.shields.io/date/1617051600)
+- **ИСТ-2** - **до 6 апреля** ![Relative date](https://img.shields.io/date/1617656400)
 
 За присланные работы после указанных сроков, оценки будут снижены!
 
