@@ -7,8 +7,7 @@ int cbinsearch(int *arr, int size, int value) {
     int mid = (left + right) / 2;
     if (arr[mid] < value) {
       left = mid + 1;
-    }
-    else {
+    } else {
       right = mid;
     }
   }
@@ -20,8 +19,7 @@ int cbinsearch(int *arr, int size, int value) {
   }
   if (count) {
     return count;
-  }
-  else {
+  } else {
   return 0; // если ничего не найдено
   }
 }
