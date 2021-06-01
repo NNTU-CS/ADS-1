@@ -9,7 +9,6 @@ int cbinsearch(int *arr, int size, int value) {
             j = mid;
     }
 
-   
     if (arr[i] == value) {
         while (arr[i] == value) {
             countNum++;
