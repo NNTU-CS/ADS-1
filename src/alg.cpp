@@ -15,29 +15,28 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
     uint64_t counter = 1, number = 2;
     while (counter < n) {
-        number ++;
-        if (chechPrime(number)) {
-            counter ++;
+        number++;
+        if (checkPrime(number)) {
+            counter++;
         }
     }
     return number;
 }
 
 uint64_t nextPrime(uint64_t value) {
-    value += 1;
+    value++;
     while (checkPrime(value)) {
-        value += 1;
+        value++;
     }
     return value;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
     uint64_t summ = 0;
-    for (uint64_t i = 2; i < hbound; i ++) {
-        if (checkPrime(i)) {
+    for (uint64_t i = 2; i < hbound; i ++){
+        if (checkPrime(i)){
             summ += i;
         }
     }
     return summ;
-
 }
