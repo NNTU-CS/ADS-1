@@ -3,14 +3,13 @@
 #include "alg.h"
 #include "cmath"
 bool checkPrime(uint64_t value) {
-    for (int i = 2; i <= sqrt(value); i++) {
-        if (value == 2)
-            return true;
-        if ((value % i) == 0) {
-            return false;
+    if (value > 1) {
+        for (uint64_t i = 2; i <= sqrt(value); i++) {
+            if (value % i == 0)
+                return false;
         }
+        return true;
     }
-    return true;
 }
 uint64_t nPrime(uint64_t n) {
     uint64_t count = 0;
