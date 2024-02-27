@@ -19,7 +19,7 @@ uint64_t nPrime(uint64_t n) {
 	int num = 2;
 	int maxNum = pow(2, 64);
 	for (int i = 1; i < n; i++) {
-		for (int j = num+1; j < maxNum; j++) {
+		for (int j = num + 1; j < maxNum; j++) {
 			if (checkPrime(j)) {
 				num = j;
 				break;
