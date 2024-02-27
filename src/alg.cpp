@@ -2,7 +2,6 @@
 #include <cmath>
 #include "alg.h"
 
-
 bool checkPrime(uint64_t value) {
     if (value <= 1)
         return false;
