@@ -5,10 +5,10 @@
 
 
 bool checkPrime(uint64_t value) {
-	bool flag = true;
-	float sqNum = sqrt(value);
-	for (int i = 2; i <= sqNum; i++) {
-		if (value % i == 0) {
+    bool flag = true;
+    float sqNum = sqrt(value);
+    for (int i = 2; i <= sqNum; i++) {
+        if (value % i == 0) {
 			flag = false;
 		}
 	}
@@ -17,7 +17,7 @@ bool checkPrime(uint64_t value) {
 
 uint64_t nPrime(uint64_t n) {
 	int num = 2;
-	int maxNum = pow(2, 64);
+	float maxNum = pow(2, 64);
 	for (int i = 1; i < n; i++) {
 		for (int j = num + 1; j < maxNum; j++) {
 			if (checkPrime(j)) {
@@ -31,7 +31,7 @@ uint64_t nPrime(uint64_t n) {
 
 uint64_t nextPrime(uint64_t value) {
 	int result = 0;
-	int maxNum = pow(2, 64);
+	float maxNum = pow(2, 64);
 	for (int i = value + 1; i < maxNum; i++) {
 		if (checkPrime(i)) {
 			result = i;
