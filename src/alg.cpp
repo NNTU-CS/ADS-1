@@ -4,7 +4,7 @@
 #include <math.h>
 
 bool checkPrime(uint64_t value) {
-  for (int i = 2; i < round(pow(value, 0.5) + 1); i++) {
+  for (int i = 2; i <= pow(value, 0.5); i++) {
     if (value % i == 0)
       return false;
   }
@@ -17,13 +17,12 @@ uint64_t nPrime(uint64_t n) {
   while(1) {
     if (checkPrime(i)) {
       count++;
-      if (n == count) {
-        return i;
-        break;
-      }
     }
-    i++;
+    if (count < n) {
+      i += 2;
+    }
   }
+  return i;
 }
 
 uint64_t nextPrime(uint64_t value) {
