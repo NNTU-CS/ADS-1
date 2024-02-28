@@ -1,7 +1,7 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
-#include <math.h>
+#include <cmath>
 
 bool checkPrime(uint64_t value) {
   for (int i = 2; i <= pow(value, 0.5); i++) {
@@ -14,7 +14,7 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
   uint64_t count = 0;
   uint64_t i = 2;
-  while(1) {
+  while(count < n) {
     if (checkPrime(i)) {
       count++;
     }
