@@ -4,7 +4,7 @@
 #include <math.h>
 
 bool checkPrime(uint64_t value) {
-  for (int i = 2; i < (pow(value, 0.5) + 1); i++) {
+  for (int i = 2; i < round(pow(value, 0.5) + 1); i++) {
     if (value % i == 0)
       return false;
   }
