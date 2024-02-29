@@ -29,11 +29,10 @@ uint64_t nPrime(uint64_t n) {
 
 uint64_t nextPrime(uint64_t value) {
     uint64_t currentNumber = value + 1;
-    do {
+    while(!checkPrime(currentNumber)){
         currentNumber++;
-    } while (!checkPrime(currentNumber));
+    }
     return currentNumber;
-
 }
 
 uint64_t sumPrime(uint64_t hbound) {
