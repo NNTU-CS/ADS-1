@@ -1,17 +1,15 @@
 // Copyright 2022 NNTU-CS
 #include "alg.h"
-#include <valarray>
+#include <cmath>
 
 
 bool checkPrime(uint64_t value) {
     if (value == 0 || value == 1) {
         return false;
-    } else {
-        for (uint64_t i = 2; i <= sqrt(value); i++) {
-            if (value % i == 0) {
-                return false;
-                break;
-            }
+    }
+    for (uint64_t i = 2; i <= sqrt(value); i++) {
+        if (value % i == 0) {
+            return false;
         }
     }
     return true;
