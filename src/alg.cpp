@@ -1,6 +1,5 @@
 #include <cstdint>
 #include "alg.h"
-using namespace std;
 #include <cmath>
 
 bool checkPrime(uint64_t value)
