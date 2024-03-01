@@ -22,19 +22,19 @@ bool checkPrime(uint64_t value) {
 }
 
 uint64_t nPrime(uint64_t n) {
-int count = 0;
-for (int i = 2; ; i++)
-{
-	if (checkPrime(i) == true)
+	int count = 0;
+	for (int i = 2; ; i++)
 	{
-		count += 1;
+		if (checkPrime(i) == true)
+		{
+			count += 1;
+		}
+		if (count == n)
+		{
+			return i;
+			break;
+		}
 	}
-	if (count == n)
-	{
-		return i;
-		break;
-	}
-}
 }
 
 uint64_t nextPrime(uint64_t value) {
@@ -49,8 +49,8 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-  int sumOfPrime = 0;
-	for (int i = 2; i < hbound; i++)
+  uint64_t sumOfPrime = 0;
+	for (int i = 2; i <= hbound; i++)
 	{
 		if (checkPrime(i) == true)
 		{
