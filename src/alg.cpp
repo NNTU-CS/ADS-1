@@ -5,7 +5,7 @@ using namespace std;
 #include <cmath>
 
 bool checkPrime(uint64_t value) {
-  int valeuInCoren = sqrt(value);
+  int valueInCoren = sqrt(value);
   if (value <= 1)
   {
     return false;
@@ -50,7 +50,7 @@ uint64_t nextPrime(uint64_t value) {
 
 uint64_t sumPrime(uint64_t hbound) {
   int sumOfPrime = 0;
-	for (int i = 2; i <= hbound; i++)
+	for (int i = 2; i < hbound; i++)
 	{
 		if (checkPrime(i) == true)
 		{
