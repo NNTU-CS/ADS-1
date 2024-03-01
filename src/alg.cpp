@@ -5,7 +5,7 @@ using namespace std;
 #include <cmath>
 
 bool checkPrime(uint64_t value) {
-  int valeuINCoren = sqrt(value);
+  int valeuInCoren = sqrt(value);
   if (value <= 1)
   {
     return false;
