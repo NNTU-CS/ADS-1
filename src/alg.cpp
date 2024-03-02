@@ -13,33 +13,33 @@ bool checkPrime(uint64_t value) {
             return false;
         }
     }
-    
+
     return true;
 }
 
 uint64_t nPrime(uint64_t n) {
-    if (n == 1) return 2; 
+    if (n == 1) return 2;
     uint64_t count = 1;
     uint64_t num = 3;
-    
+
     while (count < n) {
         if (checkPrime(num)) {
             count++;
         }
         num += 2;
     }
-    
+
     return num - 2;
 }
 
 uint64_t nextPrime(uint64_t value) {
     if (value < 2) return 2;
-    
+
     uint64_t next = value + 1;
     while (!checkPrime(next)) {
         next++;
     }
-    
+
     return next;
 }
 
@@ -50,6 +50,6 @@ uint64_t sumPrime(uint64_t hbound) {
             sum += i;
         }
     }
-    
+
     return sum;
 }
