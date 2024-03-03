@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "alg.h"
 
+
 bool checkPrime(uint64_t value) {
     if (value <= 1) {
         return false;
@@ -45,3 +46,4 @@ uint64_t sumPrime(uint64_t hbound) {
   }
   return sum;
 }
+
