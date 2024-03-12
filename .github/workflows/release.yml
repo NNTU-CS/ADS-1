@@ -2,16 +2,45 @@ name: GHA-frac-Release
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Install gtest manually
-      run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && ls -l lib && sudo cp lib/*.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
-    - uses: actions/checkout@v1
-    - name: configure
-      run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-Werror" ..
-    - name: make
-      run: cd build && make
-    - name: Run Test
-      run: /home/runner/work/ADS-1/ADS-1/build/test/ADS-1.test
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Configure Project
+        uses: threeal/cmake-action@v1.3.0
+
+      - name: Build Project
+        run: cmake --build build --target all
+
+      - name: Test Project
+        if: success()
+        run: ctest -T test --test-dir build
+
+      - name: Install JUnit report merger
+        if: always()
+        run: npm install -g junit-report-merger --output-on-failure
+
+      - name: Merge reports
+        if: always()
+        id: reports_merge
+        run: jrm ./build/testingReport/junit_all_testing_reports.xml "./build/testingReport/*.xml"
+        continue-on-error: true
+      
+      - name: Test Reporter
+        if: always()
+        id: test_reporter
+        continue-on-error: true
+        uses: dorny/test-reporter@v1.8.0
+        with:
+          name: CMake GTests                                         # Name of the check run which will be created
+          path: ./build/testingReport/junit_all_testing_reports.xml  # Path to test results
+          reporter: java-junit                                       # Format of test results
+          fail-on-error: false
