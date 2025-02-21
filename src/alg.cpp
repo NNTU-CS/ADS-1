@@ -41,18 +41,29 @@ uint64_t sumPrime(uint64_t hbound) {
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     uint64_t count = 0, current = 2;
+    if (lbound >= hbound)
+        return 0;
+  
     if (checkPrime(lbound))
         current = lbound;
     else
         current  = nextPrime(lbound);
     
-    for (; current < hbound;) {
+    while (current < hbound) {
         uint64_t first = current;
         uint64_t second = nextPrime(current);
-        if (second < hbound && (second - first) == 2) {
+
+        if (second >= hbound) {
+            break;
+        }
+      
+        if (second - first == 2) {
             count++;
+            current = second;
+        } else {
             current = second;
         }
     }
+  
     return count;
 }
