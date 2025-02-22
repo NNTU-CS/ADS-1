@@ -9,7 +9,7 @@ bool checkPrime(uint64_t value) {
   if (value <= 1)
     return false;
   uint64_t array = 2;
-  for (uint64_t i = (uint64_t)pow(value, 0.5) + 1; i > 1; i--) {
+  for (uint64_t i = static_cast<uint64_t>(pow(value, 0.5)) + 1; i > 1; i--) {
     if (value % i == 0) {
       array++;
     }
