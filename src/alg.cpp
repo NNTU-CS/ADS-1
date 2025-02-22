@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <cstdint>
 #include <iostream>
-#import <cmath>
+#include <cmath>
 #include "alg.h"
 
 bool checkPrime(uint64_t value) {
@@ -59,7 +59,6 @@ uint64_t sumPrime(uint64_t hbound) {
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  bool flag = false;
   int twin_count = 0;
 
   for (uint64_t i = lbound; i < hbound; i++) {
