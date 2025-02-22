@@ -1,11 +1,14 @@
 // Copyright 2022 NNTU-CS
-#include <stdio.h>
 #include <cstdint>
 #include <iostream>
 #include <cmath>
 #include "alg.h"
 
 bool checkPrime(uint64_t value) {
+  if (value < 2) {
+    return False;
+  if (value == 2) {
+    return True;
   int value_sqrt = (pow(value, 0.5) + 1) / 1;
   for (int i = 2; i <= value_sqrt; i++) {
     if (value % i == 0) {
@@ -19,12 +22,9 @@ uint64_t nPrime(uint64_t n) {
   uint64_t prime_number = 0;
   uint64_t counter = 0;
   bool flag = false;
-  for (uint64_t i = 2; flag != true; i++) {
+  for (uint64_t i = 2; counter < n; i++) {
     if (checkPrime(i)) {
       counter++;
-    }
-    if (counter == n) {
-      flag = true;
       prime_number = i;
     }
   }
