@@ -43,10 +43,13 @@ uint64_t nextPrime(uint64_t value) {
 
 uint64_t sumPrime(uint64_t hbound) {
   // вставьте код функции
+  uint64_t n = hbound - 1;
   uint64_t sum = 0;
-  while (hbound - 1 > 1) {
-    sum += nPrime(hbound);
-    hbound--;
+  while (n > 1) {
+    if (checkPrime(n)) {
+      sum += n;
+    }
+    n--;
   }
   return sum;
 }
