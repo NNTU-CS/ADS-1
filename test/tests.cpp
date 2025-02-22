@@ -2,7 +2,7 @@
 
 #include <gtest/gtest.h>
 #include <cstdint>
-#include "alg.h"
+#include "../include/alg.h"
 
 
 TEST(ads1, checkPrime1) {
