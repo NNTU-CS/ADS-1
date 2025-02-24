@@ -42,11 +42,24 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-  // вставьте код функции
-  return 2;
+    uint64_t num = 2;
+    uint64_t sum = 0;
+    while (num < hbound) {
+        sum += num;
+        num = nextPrime(num);
+    }
+    return sum;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  // вставьте код функции
-  return 1;
+    uint64_t cnt = 0;
+    uint64_t num = nextPrime(lbound - 1);
+    while (num < hbound) {
+        uint64_t next = nextPrime(num);
+        if ((next - num) == 2 && num < hbound) {
+            cnt++;
+        }
+        num = next;
+    }
+    return cnt;
 }
