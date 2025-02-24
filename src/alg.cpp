@@ -1,6 +1,6 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
-#include <cmath> 
+#include <cmath>
 #include "alg.h"
 
 
@@ -8,7 +8,7 @@ bool checkPrime(uint64_t value) {
     if (value < 2) {
         return false;
     }
-    for (uint64_t i = 2; i <= (uint64_t)sqrt(value); i++) {
+    for (uint64_t i = 2; i <= sqrt(value); i++) {
         if (value % i == 0) {
             return false;
         }
