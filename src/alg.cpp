@@ -56,7 +56,8 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     uint64_t num = nextPrime(lbound - 1);
     while (num < hbound) {
         uint64_t next = nextPrime(num);
-        if ((next - num) == 2 && num < hbound) {
+        if (next >= hbound) break;
+        if ((next - num) == 2) {
             cnt++;
         }
         num = next;
