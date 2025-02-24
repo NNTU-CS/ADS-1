@@ -5,8 +5,11 @@
 
 
 bool checkPrime(uint64_t value) {
-    for (uint64_t i = 0; i <= sqrt(value); i++){
-        if (value % i == 0){
+    if (value < 2) {
+        return false;
+    }
+    for (uint64_t i = 2; i <= (uint64_t)sqrt(value); i++) {
+        if (value % i == 0) {
             return false;
         }
     }
