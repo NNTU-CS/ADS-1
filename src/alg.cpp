@@ -22,7 +22,7 @@ uint64_t nPrime(uint64_t n) {
 
 uint64_t nextPrime(uint64_t value) {
   uint64_t next = value+1;
-  for (; !checkPrime(next); next++) {};
+  for (; !checkPrime(next); next++) {}
   return next;
 }
 
