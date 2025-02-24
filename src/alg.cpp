@@ -4,8 +4,8 @@
 
 
 bool checkPrime(uint64_t value) {
-  int count=0;
-  for(int i=2; i<=sqrt(value);i++)
+  uint64_t count=0;
+  for(uint64_t i=2; i<=sqrt(value);i++)
     {
       if (value % i == 0)
         count++;
@@ -15,7 +15,7 @@ bool checkPrime(uint64_t value) {
 }
 
 uint64_t nPrime(uint64_t n) {
-  // вставьте код функции
+  
   return 2;
 }
 
