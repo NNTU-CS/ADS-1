@@ -4,7 +4,7 @@
 #include <cstdint>
 
 bool checkPrime(uint64_t value) {
-  if (value <= 1){
+  if (value <= 1) {
     return false;
   }
   uint64_t array = 2;
