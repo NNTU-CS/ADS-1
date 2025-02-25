@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include <cstdint>
+#include <vector>
 using namespace std;
 
 bool checkPrime(uint64_t value) {
@@ -14,11 +15,10 @@ bool checkPrime(uint64_t value) {
 }
 
 uint64_t nPrime(uint64_t n) {
-  uint64_t arr[1000], index = 0;
-  for (int i = 2; index < n; i++) {
+  vector<uint64_t> arr;
+  for (int i = 2; arr.size() < n; i++) {
     if (checkPrime(i)) {
-      arr[index] = i;
-      index++;
+      arr.push_back(i);
     }
   }
   return arr[n - 1];
@@ -53,4 +53,3 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   }
   return count;
 }
-
