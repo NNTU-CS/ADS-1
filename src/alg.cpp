@@ -27,8 +27,12 @@ return num;
 }
 
 uint64_t nextPrime(uint64_t value) {
-  // вставьте код функции
-  return 2;
+uint64_t num = value + 1;
+while (!checkPrime(num))
+{
+  num++;
+}
+ return num;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
