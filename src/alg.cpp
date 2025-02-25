@@ -32,9 +32,6 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-    if (value < 2) {
-        return 2;
-    }
     uint64_t candidat = value;
     if (candidat % 2 == 0) {
         candidat++;
