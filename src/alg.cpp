@@ -36,8 +36,12 @@ while (!checkPrime(num))
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-  // вставьте код функции
-  return 2;
+  uint64_t sum=0;
+  for (uint64_t n=2; n<hbound; n++){
+    if (checkPrime(n))
+      sum+=n;
+  }
+  return sum;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
