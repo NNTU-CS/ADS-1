@@ -1,5 +1,0 @@
-# ninja log v6
-1	30	1740514638840414914	src/CMakeFiles/ADS-1.info.dir/main.cpp.o	9781f329db59200
-1	74	1740514638840155831	src/CMakeFiles/ADS-1.dir/alg.cpp.o	9674f81ded2691f9
-74	100	1740514638913174535	src/libADS-1.dylib	940c8f3fce9a2fcc
-100	123	1740514638939323795	src/ADS-1.info	ff1fda13e9f01892

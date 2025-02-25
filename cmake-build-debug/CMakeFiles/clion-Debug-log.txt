@@ -41,6 +41,6 @@ CMake Deprecation Warning at cmake-build-debug/_deps/googletest-src/googletest/C
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
 -- Found Threads: TRUE
 PROJECT_SOURCE_DIR="/Users/pavelzolin/Desktop/Project/ADS-1/cmake-build-debug/_deps/googletest-src/googletest/include"
--- Configuring done (7.7s)
+-- Configuring done (16.0s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/pavelzolin/Desktop/Project/ADS-1/cmake-build-debug
