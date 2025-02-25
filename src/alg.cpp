@@ -3,19 +3,18 @@
 #include <cmath>
 #include <cstdint>
 #include <vector>
-using namespace std;
 
 bool checkPrime(uint64_t value) {
   if (value < 2)
     return false;
-  for (int i = 2; i <= sqrt(value); i++)
+  for (int i = 2; i <= std::sqrt(value); i++)
     if (value % i == 0)
       return false;
   return true;
 }
 
 uint64_t nPrime(uint64_t n) {
-  vector<uint64_t> arr;
+  std::vector<uint64_t> arr;
   for (int i = 2; arr.size() < n; i++) {
     if (checkPrime(i)) {
       arr.push_back(i);
