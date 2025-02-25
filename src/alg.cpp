@@ -12,9 +12,8 @@ bool checkPrime(uint64_t value) {
   }
   if (count == 2) {
     return true;
-  } else {
-    return false;
-  }
+  } 
+  return false;
 }
 
 uint64_t nPrime(uint64_t n) {
@@ -29,9 +28,6 @@ uint64_t nPrime(uint64_t n) {
     }
     if (count == 2) {
       index++;
-      number++;
-    } else {
-      number++;
     }
     count = 0;
   }
