@@ -4,15 +4,15 @@
 
 
 bool checkPrime(uint64_t value) {
-  uint64_t count_divisors = 2;
+	uint64_t count_divisors = 2;
 
-  for (uint64_t i = 2; i < value; ++i) {
-	  if (value % i == 0) {
-		  count_divisors++;
-	  }
-  }
+	for (uint64_t i = 2; i < value; ++i) {
+		if (value % i == 0) {
+			count_divisors++;
+		}
+	}
 
-  return count_divisors == 2 and value != 1;
+	return count_divisors == 2 and value != 1;
 }
 
 uint64_t nPrime(uint64_t n) {
