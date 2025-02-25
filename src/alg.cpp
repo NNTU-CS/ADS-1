@@ -1,39 +1,36 @@
 // Copyright 2022 NNTU-CS
-#include <cstdint>
 #include "alg.h"
+#include <cstdint>
 #include<cmath>
 
 bool checkPrime(uint64_t value) {
-	if (value < 2)
-		return false;
-	if (value % 2 == 0 && value > 2)
-		return false;
-	for (uint64_t i = 3; i <= sqrt(value); i += 2) { 
-		if (value % i == 0) {
-			return false;
-		}
-	}
-	return true;
+  if (value < 2)
+    return false;
+  if (value % 2 == 0 && value > 2)
+    return false;
+  for (uint64_t i = 3; i <= sqrt(value); i += 2) {
+    if (value % i == 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 uint64_t nPrime(uint64_t n) {
-	uint64_t col = 0;
-	uint64_t candidat = 1;
+  uint64_t col = 0;
+  uint64_t candidat = 1;
 
-	while (col < n) {
-		candidat++;
-		if (checkPrime(candidat)) {
-			col++;
-		}
-	}
-	return candidat;
+  while (col < n) {
+    candidat++;
+    if (checkPrime(candidat)) {
+      col++;
+    }
+  }
+  return candidat;
 }
 
 uint64_t nextPrime(uint64_t value) {
-
-  if (value < 2){
-    return 2;
-  }
+  if (value < 2) return 2;
 
   uint64_t candidat = value;
 
