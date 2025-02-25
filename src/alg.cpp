@@ -32,48 +32,46 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-  if (value < 2) {
-    return 2;
-  }
+    if (value < 2) return 2;
 
-  uint64_t candidat = value;
+    uint64_t candidat = value;
 
-  if (candidat % 2 == 0) {
-    candidat++;
-  } else {
-    candidat += 2;
-  }
-
-  while (true) {
-    if (checkPrime(candidat)) {
-      return candidat;
+    if (candidat % 2 == 0) {
+        candidat++;
+    } else {
+        candidat += 2;
     }
-    candidat += 2;
-  }
+
+    while (true) {
+        if (checkPrime(candidat)) {
+            return candidat;
+        }
+        candidat += 2;
+    }
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-  uint64_t sum = 0;
-  uint64_t candidat = 1;
+    uint64_t sum = 0;
+    uint64_t candidat = 1;
 
-  while (candidat < hbound) {
-    candidat++;
-    if (checkPrime(candidat)) {
-      sum += candidat;
+    while (candidat < hbound) {
+        candidat++;
+        if (checkPrime(candidat)) {
+            sum += candidat;
+        }
     }
-  }
-  return sum;
+    return sum;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  uint64_t col = 0;
-  uint64_t candidat = lbound;
+    uint64_t col = 0;
+    uint64_t candidat = lbound;
 
-  while (candidat < hbound - 2) {
-    if (checkPrime(candidat) && checkPrime(candidat + 2)) {
-      col++;
+    while (candidat < hbound - 2) {
+        if (checkPrime(candidat) && checkPrime(candidat + 2)) {
+            col++;
+        }
+        candidat++;
     }
-    candidat++;
-  }
-  return col;
+    return col;
 }
