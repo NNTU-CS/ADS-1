@@ -1,23 +1,28 @@
 // Copyright 2022 NNTU-CS
-#include "alg.h" 
-#include <cstdint>  
-#include <cmath>    
+#include "alg.h"
+#include <cmath>
+#include <cstdint>
 
 bool checkPrime(uint64_t numberToTest) {
-  if (numberToTest <= 1) return false;
-  if (numberToTest == 2 || numberToTest == 3) return true;
-  if (numberToTest % 2 == 0) return false;
+  if (numberToTest <= 1)
+    return false;
+  if (numberToTest == 2 || numberToTest == 3)
+    return true;
+  if (numberToTest % 2 == 0)
+    return false;
 
   uint64_t upperBound =
       static_cast<uint64_t>(sqrt(static_cast<double>(numberToTest)));
   for (uint64_t checker = 3; checker <= upperBound; checker += 2) {
-    if (numberToTest % checker == 0) return false;
+    if (numberToTest % checker == 0)
+      return false;
   }
   return true;
 }
 
 uint64_t nPrime(uint64_t position) {
-  if (position < 1) return 2;
+  if (position < 1)
+    return 2;
 
   uint64_t primesFound = 0;
   uint64_t currentValue = 1;
