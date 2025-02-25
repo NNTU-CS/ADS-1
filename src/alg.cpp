@@ -75,10 +75,10 @@ uint64_t sumPrime(uint64_t hbound) {
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-// вставьте код функции
-int pairs = 0;
-int oldPrime = nextPrime(lbound);
-for (int index = lbound; index < hbound; index++) {
+  // вставьте код функции
+  int pairs = 0;
+  int oldPrime = nextPrime(lbound);
+  for (int index = lbound; index < hbound; index++) {
     int count = 0;
     for (int i = 1; i <= index; i++) {
         if (index % i == 0) { count++; }
@@ -87,6 +87,6 @@ for (int index = lbound; index < hbound; index++) {
         if (index - oldPrime == 2) { pairs++; }
         oldPrime = index;
     }
-}
-return pairs;
+  }
+  return pairs;
 }
