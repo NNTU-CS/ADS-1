@@ -10,7 +10,7 @@ bool checkPrime(uint64_t numberToTest) {
   if (numberToTest % 2 == 0) return false;
 
   uint64_t upperBound = static_cast<uint64_t>(
-    sqrt(static_cast<double>(numberToTest)));
+  sqrt(static_cast<double>(numberToTest)));
   for (uint64_t checker = 3; checker <= upperBound; checker += 2) {
     if (numberToTest % checker == 0) return false;
   }
