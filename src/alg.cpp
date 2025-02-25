@@ -22,16 +22,16 @@ bool checkPrime(uint64_t value) {
 }
 
 uint64_t nPrime(uint64_t n) {
-  uint64_t count = 0;      
+  uint64_t count = 0;
   uint64_t candidate = 2;
   while (count < n) {
     if (checkPrime(candidate)) {
-      count++;       
+      count++;
       if (count == n) {
         return candidate;
       }
     }
-    candidate++;       
+    candidate++;
   }
   return 0;
 }
