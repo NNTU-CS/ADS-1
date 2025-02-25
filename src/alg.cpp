@@ -1,5 +1,7 @@
+// Copyright 2022 NNTU-CS
 #include <iostream>
 #include <cmath>
+#include <cstdint>
 using namespace std;
 
 bool checkPrime(uint64_t value) {
