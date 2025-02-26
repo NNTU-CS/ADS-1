@@ -45,7 +45,7 @@ uint64_t nextPrime(uint64_t value) {
       }
     }
   } else {
-    for (uint64_t i = value; ; i += 2) {
+    for (uint64_t i = value+2; ; i += 2) {
       if (checkPrime(i)) {
         return i;
       }
@@ -115,8 +115,7 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
           first_prime = i;
         }
       }
-    }
-    else {
+    }  else {
       for (uint64_t i = first_prime; i < hbound; i += 2) {
         if (checkPrime(i)) {
           if (i - first_prime == 2) {
