@@ -2,7 +2,6 @@
 #include <cstdint>
 #include "alg.h"
 #include "math.h"
-#include <iostream>
 
 
 bool checkPrime(uint64_t value) {
@@ -56,3 +55,4 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t rbound) {
     }
     return count;
 }
+
