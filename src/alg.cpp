@@ -26,15 +26,11 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-  if (checkPrime(value) == true) {
-    return value;
-  } else {
-    uint64_t seekNum = value;
-    while (checkPrime(value) != true) {
-      seekNum++;
-    }
-    return seekNum;
+  uint64_t seekNum = value;
+  while (checkPrime(value) != true) {
+    seekNum++;
   }
+  return seekNum;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
