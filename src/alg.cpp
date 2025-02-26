@@ -4,7 +4,14 @@
 
 
 bool checkPrime(uint64_t value) {
-  // вставьте код функции
+  if (x <= 1) {
+        return false;
+  }
+  for (int a = 2; a <= sqrt(x); a++) {
+      if (x % a == 0) {
+          return false;
+      }
+  }
   return true;
 }
 
