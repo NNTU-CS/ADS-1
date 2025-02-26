@@ -18,8 +18,9 @@ uint64_t nPrime(uint64_t n) {
   uint64_t guessNum = 1;
   while (counter != n) {
     guessNum++;
-    if (checkPrime(guessNum))
+    if (checkPrime(guessNum)) {
       counter++;
+    }
   }
   return guessNum;
 }
@@ -27,8 +28,7 @@ uint64_t nPrime(uint64_t n) {
 uint64_t nextPrime(uint64_t value) {
   if (checkPrime(value) == true) {
     return value;
-  }
-  else {
+  } else {
     uint64_t seekNum = value;
     while (checkPrime(value) != true) {
       seekNum++;
