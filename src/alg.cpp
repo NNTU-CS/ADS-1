@@ -24,14 +24,16 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
   const int SIZE = 100 * 1000;
   int a[SIZE] = {};
-  for (uint32_t i = 2; i < SIZE; ++i)
+  for (uint32_t i = 2; i < SIZE; ++i) {
     a[i] = 1;
+  }
   int k = 1;
   int p = 2;
   while (k < n) {
-    for (uint32_t i = 2 * p; i < SIZE; i += p)
+    for (uint32_t i = 2 * p; i < SIZE; i += p) {
       a[i] = 0;
-    for (uint32_t i = p + 1; i < SIZE; ++i){
+    }
+    for (uint32_t i = p + 1; i < SIZE; ++i) {
       if (a[i] == 1) {
         p = i;
         break;
