@@ -4,11 +4,11 @@
 
 
 bool checkPrime(uint64_t value) {
-  if (x <= 1) {
+  if (value <= 1) {
         return false;
   }
-  for (int a = 2; a <= sqrt(x); a++) {
-      if (x % a == 0) {
+  for (int a = 2; a <= sqrt(value); a++) {
+      if (value % a == 0) {
           return false;
       }
   }
