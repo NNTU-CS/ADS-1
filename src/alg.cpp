@@ -18,7 +18,7 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
   uint64_t position = 0;
   uint64_t num = 0;
-  while (position < n){
+  while (position < n) {
     num++;
     if (checkPrime(num))
     position++;
@@ -50,10 +50,8 @@ uint64_t sumPrime(uint64_t hbound) {
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t count = 0;
   uint64_t twin = lbound;
-  for (; twin < hbound - 1; twin++)
-  {
-    if (checkPrime(twin) && checkPrime(twin + 2))
-    {
+  for (; twin < hbound - 1; twin++) {
+    if (checkPrime(twin) && checkPrime(twin + 2)) {
       count++;
     }
   }
