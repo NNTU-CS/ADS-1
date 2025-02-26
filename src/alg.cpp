@@ -11,8 +11,8 @@ bool checkPrime(uint64_t value) {
       count_divisors++;
     }
   }
-    
-  return count_divisors == 2 and value != 1;
+
+  return count_divisors == 2 && value != 1;
 }
 
 uint64_t nPrime(uint64_t n) {
