@@ -19,15 +19,16 @@ uint64_t nPrime(uint64_t n) {
     if (checkPrime(guessNum))
       counter++;
   }
-  return guessPrime;
+  return guessNum;
 }
 
 uint64_t nextPrime(uint64_t value) {
-  if (checkPrime(value) == True)
+  if (checkPrime(value) == true) {
     return value;
+  }
   else {
     uint64_t seekNum = value;
-    while (checkPrime(value) != True) {
+    while (checkPrime(value) != true) {
       seekNum++;
     }
     return seekNum;
@@ -37,7 +38,7 @@ uint64_t nextPrime(uint64_t value) {
 uint64_t sumPrime(uint64_t hbound) {
   int64_t summer = 0;
   for (uint64_t value = 0; value < hbound; value++) {
-    if (checkPrime(value) == TRUE)
+    if (checkPrime(value) == true)
       summer += value;
   }
   return summer;
@@ -45,7 +46,7 @@ uint64_t sumPrime(uint64_t hbound) {
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   int64_t counter = 0;
-	for (uint64_t value = lbound; value < hbound; value++) {
+  for (uint64_t value = lbound; value < hbound; value++) {
     if (checkPrime(value) && checkPrime(value + 2) && (value + 2 < hbound)) {
       counter++;
     }
