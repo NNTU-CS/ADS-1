@@ -27,7 +27,7 @@ uint64_t nPrime(uint64_t n) {
 
 uint64_t nextPrime(uint64_t value) {
   uint64_t seekNum = value + 1;
-  while (checkPrime(value) != true) {
+  while (checkPrime(seekNum) != true) {
     seekNum++;
   }
   return seekNum;
