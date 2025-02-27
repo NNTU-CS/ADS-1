@@ -40,8 +40,8 @@ uint64_t sumPrime(uint64_t hbound) {
     if (checkPrime(j) == true) {
       count++;
       sum += j;
+      if (count == hbound) res = sum;
     }
-    if (count == hbound) res = sum;
   }
   return sum;
 }
