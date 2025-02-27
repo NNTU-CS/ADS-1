@@ -39,8 +39,9 @@ uint64_t sumPrime(uint64_t hbound) {
       count++;
       sum += j;
     }
-    if (count == hbound) return sum;
+  if (count == hbound) return sum;
   }
+  return 2;
 }
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   int count = 0;
