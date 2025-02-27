@@ -4,36 +4,36 @@
 
 
 bool checkPrime(uint64_t value) {
-if (value <= 1)
+ if (value <= 1)
   return false;
-else if (value == 2)
+ else if (value == 2)
   return true;
-else if (value % 2 == 0)
+ else if (value % 2 == 0)
   return false;
-else if (value >= 3) {
+ else if (value >= 3) {
   for (uint64_t p = 3; p*p <= value; p += 2) {
-    if (value % p == 0)
-      return false;
+   if (value % p == 0)
+    return false;
   }
-}
-return true;
+ }
+ return true;
 }
 
 uint64_t nPrime(uint64_t n) {
-  uint64_t erin = 1;
+ uint64_t erin = 1;
   if (n < 1)
-    return 0;
+   return 0;
   else if (n == 1)
-    return 2;
+   return 2;
   else if (n > 1) {
-    uint64_t andrey = 2;
+   uint64_t andrey = 2;
     while(1){
-      if(checkPrime(andrey)){
-        if (erin == n)
-          return andrey;
-        erin++;
-      }
-      andrey++;
+     if(checkPrime(andrey)){
+      if (erin == n)
+       return andrey;
+       erin++;
+     }
+     andrey++;
     }
   }
 }
