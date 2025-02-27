@@ -19,17 +19,13 @@ uint64_t nPrime(uint64_t n) {
   int count = 0;
   for (uint64_t j = 2; j < pow(n, 2); j++) {
     if (checkPrime(j) == true) count++;
-    if (count == n) {
-      return j;
-    }
   }
-  return 2;
+  if (count == n) return j;
 }
 uint64_t nextPrime(uint64_t value) {
   for (uint64_t m = value; m < pow(value, 2); m++) {
     if (checkPrime(m) == true) return m;
   }
-  return 2;
 }
 uint64_t sumPrime(uint64_t hbound) {
   int sum = 0;
@@ -39,9 +35,8 @@ uint64_t sumPrime(uint64_t hbound) {
       count++;
       sum += j;
     }
-  if (count == hbound) return sum;
   }
-  return 2;
+  if (count == hbound) return sum;
 }
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   int count = 0;
