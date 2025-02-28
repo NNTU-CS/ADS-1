@@ -56,7 +56,7 @@ uint64_t sumPrime(uint64_t hbound) {
   uint64_t sumdohbound = 0;
   while (hbound > 0) {
     hbound--;
-    if(checkPrime(hbound)) {
+    if (checkPrime(hbound)) {
       sumdohbound += hbound;
     }
   }
