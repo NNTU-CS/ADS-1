@@ -25,7 +25,7 @@ uint64_t nPrime(uint64_t n) {
     if (checkPrime(x)) {
       num++;
     }
-    if (x == n) {
+    if (num == n) {
       return x;
     }
   }
