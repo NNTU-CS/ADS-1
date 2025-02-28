@@ -19,14 +19,14 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
   uint64_t num = 1;
   int x;
-  if (n<=1) {
+  if (n <= 1) {
     return 2;
   }
-  for (x=3;;x+=2) {
+  for (x = 3;;x += 2) {
     if (checkPrime(x) {
         num++;
       }
-    if (x==n) {
+    if (x == n) {
       return x;
     }
   }
