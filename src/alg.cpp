@@ -59,5 +59,5 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
       lastPrime = i;
     }
   }
-return count;
+  return count;
 }
