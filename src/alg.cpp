@@ -3,7 +3,6 @@
 #include "alg.h"
 
 bool checkPrime(uint64_t value) {
-<<<<<<< HEAD
  for (uint64_t i = 2; i <= value / 2; i++) {
   if (value % i == 0)
    return false;
@@ -179,4 +178,3 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
 	}
 	return k;
 }
->>>>>>> f7f61998485b62c15917a71d11092c936a3ed55b
