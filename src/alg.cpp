@@ -1,10 +1,10 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
+#include <vector>
 #include "alg.h"
 
-
 bool checkPrime(uint64_t value) {
-    if (value < 2) return false;       
+    if (value < 2) return false;
     if (value == 2 || value == 3) return true;
     if (value % 2 == 0 || value % 3 == 0) return false;
 
@@ -13,7 +13,7 @@ bool checkPrime(uint64_t value) {
             return false;
         }
     }
-  return true;
+    return true;
 }
 
 uint64_t nPrime(uint64_t n) {
@@ -43,14 +43,7 @@ uint64_t nPrime(uint64_t n) {
 uint64_t nextPrime(uint64_t value) {
     uint64_t num = value + 1;
     while (true) {
-        bool isPrime = true;
-        for (uint64_t i = 2; i * i <= num; ++i) {
-            if (num % i == 0) {
-                isPrime = false;
-                break;
-            }
-        }
-        if (isPrime) return num;
+        if (checkPrime(num)) return num;
         ++num;
     }
 }
@@ -61,7 +54,7 @@ uint64_t sumPrime(uint64_t hbound) {
     std::vector<bool> is_prime(hbound, true);
     is_prime[0] = is_prime[1] = false;
 
-    for (uint64_t i = 2; i * i < hbound; ++i) {
+    for (uint64_t i = 2; i * i <= hbound; ++i) {
         if (is_prime[i]) {
             for (uint64_t j = i * i; j < hbound; j += i) {
                 is_prime[j] = false;
@@ -78,30 +71,13 @@ uint64_t sumPrime(uint64_t hbound) {
 
     return sum;
 }
-}
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     uint64_t count = 0;
     uint64_t prev = 0;
 
     for (uint64_t i = lbound; i <= hbound; i++) {
-        bool isPrime = true;
-
-        if (i < 2) continue;
-        if (i == 2) {
-            prev = 2;
-            continue;
-        }
-        if (i % 2 == 0) continue;
-
-        for (uint64_t j = 3; j * j <= i; j += 2) {
-            if (i % j == 0) {
-                isPrime = false;
-                break;
-            }
-        }
-
-        if (isPrime) {
+        if (checkPrime(i)) {
             if (prev != 0 && i - prev == 2) {
                 count++;
             }
