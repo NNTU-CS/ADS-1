@@ -20,7 +20,8 @@ uint64_t nPrime(uint64_t n) {
   while (inum != n)
   numt++;
     if (checkPrime(numt)) {
-    inum++;}
+    inum++;
+  }
   return numt;
 }
 
