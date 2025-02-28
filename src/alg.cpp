@@ -46,14 +46,22 @@ uint64_t sumPrime(uint64_t hbound) {
     return 2;
   }
   uint64_t summ = 2;
-  for (uint64_t a = 3; a < hbound; a+=2) {
+  uint64_t a;
+  for (a = 3; a < hbound; a+=2) {
     if (checkPrime(a) == true) { 
       summ += a;
+    }
   }
   return summ;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  // вставьте код функции
-  return 1;
+  int count = 0;
+  uint64_t a;
+  for (a = (lbound / 2) * 2 + 1; a < hbound - 2; a += 2) {
+    if (checkPrime(a) && checkPrime(a + 2)) {
+      count++;
+    }
+  }
+  return count;
 }
