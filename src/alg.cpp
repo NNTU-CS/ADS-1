@@ -17,7 +17,7 @@ uint64_t nPrime(uint64_t n) {
   uint64_t inum = 2;
   if (n == 1) return 2;
   if (n == 2) return 3;
-  while (inum != n)
+  while (inum < n)
   numt++;
     if (checkPrime(numt)) {
     inum++;
