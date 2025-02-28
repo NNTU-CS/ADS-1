@@ -2,7 +2,6 @@
 #include <cstdint>
 #include "alg.h"
 
-
 bool checkPrime(uint64_t value) {
   if (value % 2 == 0) return false;
   if (value == 2) return true;
