@@ -56,21 +56,23 @@ uint64_t sumPrime(uint64_t hbound) {
   uint64_t sumdohbound = 0;
   while (hbound > 0) {
     hbound--;
-    sumdohbound += hbound;
+    if(checkPrime(hbound)) {
+      sumdohbound += hbound;
+    }
   }
   return sumdohbound;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  if (lbound < hbound) {
+  if (lbound > hbound) {
     return 0;
   }
   uint64_t schet = 0;
-  while (lbound != hbound-2) {
+  while (lbound <= hbound-2) {
     if ((checkPrime(lbound) == 1) && (checkPrime(lbound+2) == 1)) {
       schet++;
     }
     lbound++;
   }
-  return schet++;
+  return schet;
 }
