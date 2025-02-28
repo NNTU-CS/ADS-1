@@ -8,7 +8,7 @@ bool checkPrime(uint64_t value) {
   if (value <= 1) {
         return false;
   }
-  for (int a = 2; a <= sqrt(value); a++) {
+  for (uint64_t a = 2; a <= sqrt(value); a++) {
       if (value % a == 0) {
           return false;
       }
@@ -17,8 +17,19 @@ bool checkPrime(uint64_t value) {
 }
 
 uint64_t nPrime(uint64_t n) {
-  // вставьте код функции
-  return 2;
+  uint64_t num = 1;
+  int x;
+  if (n<=1) {
+    return 2;
+  }
+  for (x=3;;x+=2) {
+    if (checkPrime(x) {
+        num++;
+      }
+    if (x==n) {
+      return x;
+    }
+  }
 }
 
 uint64_t nextPrime(uint64_t value) {
