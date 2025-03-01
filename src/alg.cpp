@@ -56,8 +56,8 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     if (checkPrime(i)) {
       if (i - lastPrime == 2) {
           count++;
-          lastPrime = i;
         }
+        lastPrime = i;
       }
     }
     return count;
