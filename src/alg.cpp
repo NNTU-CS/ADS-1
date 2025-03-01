@@ -4,7 +4,7 @@
 
 bool checkPrime(uint64_t value) {
   if (value <= 1) {
-return false;
+    return false;
   }
   if (value <= 3) {
     return true;
@@ -48,7 +48,7 @@ uint64_t nextPrime(uint64_t value) {
   }
   while (true) {
     if (checkPrime(i))
-  return i;
+    return i;
     i = (i == 2) ? 3 : i + 2;
   }
 }
