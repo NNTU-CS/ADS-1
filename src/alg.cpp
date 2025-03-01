@@ -49,10 +49,15 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     return 0;
   }
   uint64_t count = 0;
-  for (lbound; lbound < hbound; lbound++) {
-    if (checkPrime(lbound) && checkPrime(lbound + 2) && (lbound+2)<hbound) {
-      count++;
+  uint64_t previous = 0;
+  for (uint64_t i = lbound; i < hbound; ++i) {
+    if (checkPrime(i)) {
+      if (previous != 0 && i - previous == 2) {
+        count++;
+      }
+      previous = i;
     }
-  }
-  return count++;
+}
+
+return count;
 }
