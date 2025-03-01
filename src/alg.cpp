@@ -3,8 +3,10 @@
 #include "alg.h"
 
 bool checkPrime(uint64_t value) {
-  if (value == 0 || value == 1) return false;
-  for (uint64_t i = 2; i * i <= value; i += 2) {
+  if (value < 2) return false;
+  if (value == 2) return true;
+  if (value % 2 == 0) return false;
+  for (uint64_t i = 3; i * i <= value; i += 2) {
     if (value % i == 0) return false;
   }
   return true;
@@ -13,7 +15,7 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
   uint64_t number = 1;
   uint64_t count = 1;
-  for (; count < n; number++ ) {
+  for ( ; count < n; number++ ) {
     if (checkPrime(number)) {
       count++;
     }
@@ -30,12 +32,10 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-  uint64_t number = 2;
   uint64_t sum = 2;
-  while (number != hbound) {
+  for (uint64_t namber=2; number <= hbound; number++) {
     if (checkPrime(number)) {
-      sum+=number;
-      number++;
+      sum += number;
     }
   }
   return sum;
@@ -43,6 +43,9 @@ uint64_t sumPrime(uint64_t hbound) {
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t count = 0;
+  if (lbound < 2) {
+    lbound = 2;
+  }
   for (uint64_t number = lbound; number < hbound - 2; ++number) {
     if (checkPrime(number) && checkPrime(number + 2)) {
       count++;
