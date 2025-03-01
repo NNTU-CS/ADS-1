@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #include <iostream>
+#include <cstdint>
 
 bool checkPrime(uint64_t value) {
   if (value < 2) return false;
