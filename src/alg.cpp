@@ -4,6 +4,9 @@
 #include "math.h"
 
 bool checkPrime(uint64_t value) {
+  if (value == 2) {
+    return true;
+  }
   if (value <= 1 || value % 2 == 0) {
     return false;
   }
