@@ -1,8 +1,8 @@
 // Copyright 2022 NNTU-CS
-#include <iostream>
 #include <math.h>
 #include <stdio.h>
-#include <conio.h>
+
+#include <iostream>
 
 bool checkPrime(uint64_t value) {
   if (value < 2) return false;
@@ -74,11 +74,8 @@ uint64_t sumPrime(uint64_t hbound) {
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   int count = 0;
-  bool isPrime2;
-  uint64_t present;
-  uint64_t next;
-  uint64_t k = 0;
-  uint64_t l = 0;
+  uint64_t k;
+  uint64_t l;
   for (uint64_t present = lbound; present < hbound; present++) {
     bool isPrime = true;
     for (uint64_t i = 2; i <= sqrt(present); i++) {
