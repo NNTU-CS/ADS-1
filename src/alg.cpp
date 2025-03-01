@@ -5,27 +5,27 @@
 
 // Функция проверки, является ли число простым. Изменен алгоритм немного.
 bool checkPrime(uint64_t value) {
-    if (value <= 1) return false;
+  if (value <= 1) return false;
   if (value <= 3) return true;
-    if (value % 2 == 0 || value % 3 == 0) return false;
-      for (uint64_t i = 5; i * i <= value; i = i + 6) {
-        if (value % i == 0 || value % (i + 2) == 0)
+  if (value % 2 == 0 || value % 3 == 0) return false;
+    for (uint64_t i = 5; i * i <= value; i = i + 6) {
+      if (value % i == 0 || value % (i + 2) == 0)
         return false;
-      }
+    }
     return true;
-  }
+}
 
 
 // Находит n-ое простое число
 uint64_t nPrime(uint64_t n) {
-  if (n == 1) return 2;
+    if (n == 1) return 2;
   uint64_t count = 1;
   uint64_t number = 3;
   while (count < n) {
     if (checkPrime(number)) {
       count++;
     }
-    if(count < n) {
+    if (count < n) {
       number += 2;
     }
   }
