@@ -6,8 +6,9 @@
 bool checkPrime(uint64_t value) {
   uint64_t count = 0;
   for (uint64_t i = 2; i < value / 2 + 1; i++) {
-	    if (value % i == 0)
+	   if (value % i == 0) {
 		  count++;
+	   }
   }
   if (count >= 1)
 	 return false;
@@ -20,22 +21,24 @@ uint64_t nPrime(uint64_t n) {
   uint64_t number = 1;
   while (count < n) {
 	   number++;
-	   if (checkPrime(number))
-	    	count++;
+	   if (checkPrime(number)) {
+	  	count++;
+	   }
   }
   return number;
 }
 
 uint64_t nextPrime(uint64_t value) {
-  while (!checkPrime(++value));
+  while (!checkPrime(++value)) {};
   return value;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
   uint64_t sum = 0;
   while (--hbound > 1) {
-	   if (checkPrime(hbound))
+	   if (checkPrime(hbound)) {
 		  sum += hbound;
+	   }
   }
   return sum;
 }
