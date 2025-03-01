@@ -14,7 +14,7 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
   uint64_t kol = 0;
   uint64_t num = 0;
-  
+
   if (n < 2) return 0;
   while (kol < n) {
     num++;
@@ -27,7 +27,7 @@ uint64_t nPrime(uint64_t n) {
 
 uint64_t nextPrime(uint64_t value) {
   value++;
-  while(!checkPrime(value)) {
+  while (!checkPrime(value)) {
     value++;
   }
   return value;
@@ -47,7 +47,7 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t kol = 0;
   uint64_t pervChisl = 0;
 
-  for(uint64_t num = lbound; num < hbount; num++) {
+  for (uint64_t num = lbound; num < hbound; num++) {
     if (checkPrime(num)) {
       if (pervChisl != 0 && num - pervChisl == 2) {
         kol++;
