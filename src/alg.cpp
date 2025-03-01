@@ -1,7 +1,7 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
-#include <math.h>
 #include "alg.h"
+#include "math.h"
 
 bool checkPrime(uint64_t value) {
   if (value <= 1 || value % 2 == 0) {
@@ -24,8 +24,8 @@ uint64_t nPrime(uint64_t n) {
         if (count == n) {
           return i;
         }
-        ++i;
       }
+      ++i;
     }
   }
   return 2;
