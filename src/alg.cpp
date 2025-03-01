@@ -1,9 +1,8 @@
 // Copyright 2022 NNTU-CS
 #include <iostream>
-#include <stdio.h>
-#include <time.h>
-#include <conio.h>
 #include <math.h>
+#include <stdio.h>
+#include <conio.h>
 
 
 bool checkPrime(uint64_t value) {
