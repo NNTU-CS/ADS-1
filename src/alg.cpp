@@ -19,7 +19,7 @@ uint64_t nPrime(uint64_t n) {
   if (n != 1) {
     uint64_t count = 1, i = 3;
     while (count != n) {
-      if (checkPrime(n)) {
+      if (checkPrime(i)) {
         ++count;
         if (count == n) {
           return i;
