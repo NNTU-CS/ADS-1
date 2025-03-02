@@ -7,25 +7,25 @@ bool checkPrime(uint64_t value)
 {
 	for (uint64_t i = 2; i*i<=value; ++i) {
 		if (value % i == 0) {
-			return false;
-		}
-	}
-	return true;
+			   return false;
+		  }
+	 }
+	 return true;
 }
 
 uint64_t nPrime(uint64_t n) 
 {
-	if (n<1)
-	return 0;
-	uint count = 0;
-	uint value = 1;
+	 if (n<1)
+	 return 0;
+	 uint count = 0;
+	 uint value = 1;
 	while (count < n) {
-	    value++;
+	   value++;
 	    if (checkPrime(value)) {
-	        count++;
-	    }
-	}
-	return value;
+	     count++;
+	   }
+	 }
+	 return value;
 }
 
 uint64_t nextPrime(uint64_t value)
