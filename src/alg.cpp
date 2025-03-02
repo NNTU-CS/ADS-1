@@ -1,51 +1,65 @@
+// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
 
 
-  bool checkPrime(uint64_t value) {
-    if (value < 2) {
+bool checkPrime(uint64_t value) {
+  if (value < 2) {
+    return false;
+  }
+  if (value == 2) {
+    return true
+  }
+  for (uint64_t i = 3; i * i <= value; i += 2) {
+    if (value % i == 0) {
       return false;
     }
-    for (uint64_t i = 2; i * i <= value; ++i) {
-      if (value % i == 0) {
-        return false;
+  }
+  return true;
+}
+
+uint64_t nPrime(uint64_t n) {
+  uint64_t count = 0;
+  uint64_t current = 2;
+  while (true) {
+    if (checkPrime(current)) {
+      ++count;
+      if (count == n) {
+        return current;
       }
     }
-    return true;
+    ++current;
   }
-  uint64_t nPrime(uint64_t n) {
-    uint64_t nomer = 0;
-    uint64_t chislo = 2;
-    while (nomer < n) {
-      if (checkPrime(chislo)) {
-        nomer++;
-      }
-      chislo++;
+  return 0;
+}
+
+uint64_t nextPrime(uint64_t value) {
+  uint64_t candidate = value + 1;
+  while (true) {
+    if (checkPrime(candidate)) {
+      return candidate;
     }
-    return chislo + 1;
+    ++candidate;
   }
-  uint64_t nextPrime(uint64_t value) {
-    uint64_t param = value + 1;
-    while (!checkPrime(param)) {
-      param++;
+  return 0;
+}
+
+uint64_t sumPrime(uint64_t hbound) {
+  uint64_t sum = 0;
+  for (uint64_t i = 2; i < hbound; ++i) {
+    if (checkPrime(i)) {
+      sum += i;
     }
-    return param;
   }
-  uint64_t sumPrime(uint64_t hbound) {
-    uint64_t sum = 0;
-    for (int i = 2; i < hbound; i++) {
-      if (checkPrime(i)) {
-        sum += i;
-      }
+  return sum;
+}
+
+uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
+  uint64_t count = 0;
+  for (uint64_t p = lbound; p + 2 < hbound; ++p) {
+    if (checkPrime(p) && checkPrime(p + 2)) {
+      count++;
     }
-    return sum;
   }
-  uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-    uint64_t count = 0;
-    for (int i = lbound; i < hbound; i++) {
-      if (checkPrime(i) && checkPrime(i+2)) {
-        count++;
-      }
-    }
-    return count;
-  }
+  return count;
+}
