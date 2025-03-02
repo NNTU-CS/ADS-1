@@ -26,7 +26,7 @@ uint64_t nPrime(uint64_t n) {
 			++count;
 		}
 		if (count == n)
-			return i;
+			return i; 
 	}
 }
 
