@@ -1,9 +1,8 @@
-// Copyright 2023 NNTU-CS
 #include <cstdint>
 #include <cmath>
 #include "alg.h"
 
-bool isSimple(uint64_t number) {
+bool checkPrime(uint64_t number) {
   if (number < 2) {
     return false;
   }
@@ -15,7 +14,7 @@ bool isSimple(uint64_t number) {
   return true;
 }
 
-uint64_t getNthSimple(uint64_t index) {
+uint64_t nPrime(uint64_t index) {
   if (index == 0) {
     return 0;
   }
@@ -31,7 +30,7 @@ uint64_t getNthSimple(uint64_t index) {
   }
 }
 
-uint64_t findNextSimple(uint64_t number) {
+uint64_t nextPrime(uint64_t number) {
   uint64_t num = number + 1;
   while (!isSimple(num)) {
     num++;
@@ -39,7 +38,7 @@ uint64_t findNextSimple(uint64_t number) {
   return num;
 }
 
-uint64_t sumSimples(uint64_t limit) {
+uint64_t sumPrime(uint64_t limit) {
   if (limit < 2) {
     return 0;
   }
