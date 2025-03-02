@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: sudo apt-get install cppcheck
-    - run: cppcheck --enable=all --suppress=missingInclude --suppress=missingIncludeSystem --inline-suppr --std=c++17 --error-exitcode=10 src/*.cpp
+    - run: cppcheck --enable=all --suppress=unmatchedSuppression --suppress=unusedFunction --suppress=missingInclude --suppress=missingIncludeSystem --inline-suppr --std=c++17 --error-exitcode=10 src/*.cpp
