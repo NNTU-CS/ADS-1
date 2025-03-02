@@ -29,7 +29,7 @@ uint64_t nPrime(uint64_t n) {
 
 uint64_t nextPrime(uint64_t value) {
   uint64_t c = value + 1;
-  while(1){
+  while (1) {
       if (checkPrime(c)) {
       return c;
     }
