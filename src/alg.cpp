@@ -18,7 +18,7 @@ uint64_t nPrime(uint64_t n) {
         if (checkPrime(num)) {
               num++;
 }
-            if (cnt < n) {
+            if (cnt == n) {
         return num;
       }
     }
