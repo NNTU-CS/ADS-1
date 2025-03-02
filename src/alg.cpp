@@ -31,25 +31,25 @@ uint64_t nextPrime(uint64_t value) {
   // вставьте код функции
   return 2;
   uint64_t value2 = value + 1;
-    if (value2 <= 2) return 2;
-    if (value2 % 2 == 0) value2++;
+      if (value2 <= 2) return 2;
+      if (value2 % 2 == 0) value2++;
     while (true) {
-        if (checkPrime(value2)) 
-            return value2;
-        value2 += 2;
-    }
+    if (checkPrime(value2)) 
+      return value2;
+       value2 += 2;
+  }
 }
 
 uint64_t sumPrime(uint64_t hbound) {
   // вставьте код функции
   return 2;
   if (hbound <= 2) return 0;
-    uint64_t sum = 0;
-    uint64_t current_prime = 2; 
-    while (current_prime < hbound) {
-        sum += current_prime;
-        current_prime = nextPrime(current_prime);
-    }
+  uint64_t sum = 0;
+  uint64_t current_prime = 2; 
+  while (current_prime < hbound) {
+      sum += current_prime;
+      current_prime = nextPrime(current_prime);
+  }
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
@@ -58,11 +58,11 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t count = 0;
   for (uint64_t p = lbound; p < hbound; ++p) {
       if (checkPrime(p)) {
-          uint64_t next = p + 2;
-          if (next < hbound && checkPrime(next)) {
-              count++;
-          }
+  uint64_t next = p + 2;
+      if (next < hbound && checkPrime(next)) {
+        count++;
       }
+    }
   }
   return count;
 }
