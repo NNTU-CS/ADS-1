@@ -39,7 +39,7 @@ uint64_t nPrime(uint64_t n) {
 uint64_t nextPrime(uint64_t value) {
   for (uint64_t num = value + 1; ; ++num) {
     if (checkPrime(num)) return num;
-   }
+  }
   return 2;
 }
 
@@ -51,7 +51,6 @@ uint64_t sumPrime(uint64_t hbound) {
     }
   }
   return sum;
-  return 2;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
@@ -59,7 +58,7 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   std::vector<uint64_t> primes;
 
   for (uint64_t i = lbound; i < hbound; ++i) {
-    if (isPrime(i)) {
+    if (nPrime(i)) {
       primes.push_back(i);
     }
   }
@@ -70,5 +69,4 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     }
   }
   return count;
-  return 1;
 }
