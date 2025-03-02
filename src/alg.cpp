@@ -15,14 +15,14 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
   uint64_t number = 1;
   uint64_t count = 0;
-  for ( ; count < n; number++ ) {
-    if (checkPrime(number)) {
+  while (count < n){
+    number++;
+    if (checkPrime(number)){
       count++;
     }
   }
   return number;
 }
-
 uint64_t nextPrime(uint64_t value) {
   if (value <= 1) return 2;
   value++;
