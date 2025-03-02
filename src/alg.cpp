@@ -8,65 +8,65 @@
 bool checkPrime(uint64_t value) {
     for (int i = 2; i < value; i++) {
         if (value % i == 0) {
-            return false;
-        }
+      return false;
     }
-    return true;
+  }
+  return true;
 }
 
 uint64_t nPrime(uint64_t n) {
  std::vector<int> createArrOfPrimes(int n) {
-        std::vector<int> x;
+    std::vector<int> x;
         for (int i = 2; i <= n; i++) {
             if (checkPrime(i)) {
-                x.push_back(i);
-            }
-        }
-        return x;
+        x.push_back(i);
+      }
     }
+    return x;
+  }
 
-    std::vector<int> b = createArrOfPrimes(10000);
+  std::vector<int> b = createArrOfPrimes(10000);
     for (size_t i = 0; i < b.size(); i++) {
         if (i == a) {
-            return b[i];
-        }
+      return b[i];
     }
-    return -1;
+  }
+  return -1;
 }
 
 uint64_t nextPrime(uint64_t value) {
-    ++value;
+  ++value;
     while(!checkPrime(value)) {
-        ++value;
-    }
-    return value;
+    ++value;
+  }
+  return value;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-    int counter = 0;
+  int counter = 0;
     for (int i = 2; i < hbound; i++) {
         if (checkPrime(i)) {
-            counter += i;
-        }
+      counter += i;
     }
-    return counter;
+  }
+  return counter;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-    std::vector<int> x;
-    int counter = 0;
+  std::vector<int> x;
+  int counter = 0;
 
     for (int i = lbound; i <= hbound; i++) {
         if (checkPrime(i)) {
-            x.push_back(i);
-        }
+      x.push_back(i);
     }
+  }
 
     for (int i = 0; i < x.size() - 1; i++) {
         if (x[i+1] - x[i] == 2) {
-            counter++;
-        }
+      counter++;
     }
+  }
 
-    return counter;
+  return counter;
 }
