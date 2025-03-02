@@ -12,7 +12,7 @@ bool checkPrime(uint64_t value) {
 	  if (count > 1)
 		  return false;
   }
-  return true;
+  return true; 
 } 
 
 uint64_t nPrime(uint64_t n) {
