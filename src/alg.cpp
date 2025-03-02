@@ -17,11 +17,11 @@
     uint64_t chislo = 2;
     while (nomer < n) {
       if (checkPrime(chislo)) {
-                nomer++;
+        nomer++;
       }
       chislo++;
     }
-    return chislo + 1;
+    return chislo;
   }
   uint64_t nextPrime(uint64_t value) {
     uint64_t param = value + 1;
