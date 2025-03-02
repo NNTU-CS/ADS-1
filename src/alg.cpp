@@ -18,8 +18,8 @@
     uint64_t chislo = 2;
     while (nomer < n) {
       if (checkPrime(chislo)) {
-      nomer++;
-        }
+        nomer++;
+      }
       chislo++;
     }
     return chislo + 1;
@@ -28,9 +28,9 @@
     uint64_t param = value + 1;
     while (!checkPrime(param)) {
       param++;
-      }
-      return param;
     }
+    return param;
+  }
   uint64_t sumPrime(uint64_t hbound) {
     uint64_t sum = 0;
     for (int i = 2; i < hbound; i++) {
