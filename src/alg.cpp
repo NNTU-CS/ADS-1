@@ -61,7 +61,7 @@ uint64_t sumPrime(uint64_t hbound) {
   return sum;
 }
 
-// Количество пар простых чисел-близнецов в диапазоне [lbound, hbound)
+// Количество пар простых чисел-близнецов в диапазоне (lbound, hbound)
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t count = 0;
   if (lbound < 3) lbound = 3;
