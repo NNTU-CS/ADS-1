@@ -1,29 +1,72 @@
-// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
+#include <iostream>
+#include <vector>
+#include <cmath>
 
 
 bool checkPrime(uint64_t value) {
-  // вставьте код функции
-  return true;
+    for (int i = 2; i < value; i++) {
+        if (value % i == 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
 uint64_t nPrime(uint64_t n) {
-  // вставьте код функции
-  return 2;
+ std::vector<int> createArrOfPrimes(int n) {
+        std::vector<int> x;
+        for (int i = 2; i <= n; i++) {
+            if (checkPrime(i)) {
+                x.push_back(i);
+            }
+        }
+        return x;
+    }
+
+    std::vector<int> b = createArrOfPrimes(10000);
+    for (size_t i = 0; i < b.size(); i++) {
+        if (i == a) {
+            return b[i];
+        }
+    }
+    return -1;
 }
 
 uint64_t nextPrime(uint64_t value) {
-  // вставьте код функции
-  return 2;
+    ++value;
+    while(!checkPrime(value)) {
+        ++value;
+    }
+    return value;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-  // вставьте код функции
-  return 2;
+    int counter = 0;
+    for (int i = 2; i < hbound; i++) {
+        if (checkPrime(i)) {
+            counter += i;
+        }
+    }
+    return counter;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  // вставьте код функции
-  return 1;
+    std::vector<int> x;
+    int counter = 0;
+
+    for (int i = lbound; i <= hbound; i++) {
+        if (checkPrime(i)) {
+            x.push_back(i);
+        }
+    }
+
+    for (int i = 0; i < x.size() - 1; i++) {
+        if (x[i+1] - x[i] == 2) {
+            counter++;
+        }
+    }
+
+    return counter;
 }
