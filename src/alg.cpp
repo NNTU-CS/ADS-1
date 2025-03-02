@@ -15,9 +15,9 @@ bool checkPrime(uint64_t value) {
 }
 
 uint64_t nPrime(uint64_t n) {
- std::vector<int> createArrOfPrimes(int n) {
+ int createArrOfPrimes(int c) {
     std::vector<int> x;
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i <= c; i++) {
             if (checkPrime(i)) {
         x.push_back(i);
       }
@@ -25,9 +25,9 @@ uint64_t nPrime(uint64_t n) {
     return x;
   }
 
-  std::vector<int> b = createArrOfPrimes(10000);
+  int b = createArrOfPrimes(10000);
     for (size_t i = 0; i < b.size(); i++) {
-        if (i == a) {
+        if (i == n) {
       return b[i];
     }
   }
