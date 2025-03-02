@@ -33,7 +33,7 @@ uint64_t nPrime(uint64_t n) {
 }
 uint64_t nextPrime(uint64_t value) {
   value++;
-  if (value > 2 && value % 2 == 0 && value % 3 == 0){
+  if (value > 2 && value % 2 == 0 && value % 3 == 0) {
     value++;
   }
   while (true) {
