@@ -14,8 +14,9 @@ bool checkPrime(uint64_t value) {
     return false;
   }
   for (uint64_t i = 5; i * i <= value; i = i + 6) {
-    if (value % i == 0 || value % (i + 2) == 0)
+    if (value % i == 0 || value % (i + 2) == 0) {
       return false;
+    }
   }
   return true;
 }
