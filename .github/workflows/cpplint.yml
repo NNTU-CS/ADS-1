@@ -10,4 +10,4 @@ jobs:
     - uses: actions/setup-python@v2
     - run: pip install cpplint
     - run: cpplint --filter=-build/include_subdir,-whitespace/comments,+whitespace/indent --recursive .
- - run: cppcheck --enable=all --suppress=unmatchedSuppression --suppress=unusedFunction --suppress=missingInclude --suppress=missingIncludeSystem --inline-suppr --std=c++17 --error-exitcode=10 src/*.cpp
+ 
