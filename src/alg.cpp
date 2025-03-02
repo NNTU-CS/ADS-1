@@ -36,7 +36,7 @@ uint64_t nextPrime(uint64_t value) {
     while (true) {
     if (checkPrime(value2)) 
     return value2;
-       value2 += 2;
+     value2 += 2;
   }
 }
 
@@ -58,7 +58,7 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t count = 0;
   for (uint64_t p = lbound; p < hbound; ++p) {
       if (checkPrime(p)) {
-    uint64_t next = p + 2;
+     uint64_t next = p + 2;
       if (next < hbound && checkPrime(next)) {
         count++;
       }
