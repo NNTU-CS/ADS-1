@@ -49,20 +49,20 @@ if (checkPrime(lbound)) {
 if (lbound >= hbound) {
     return 0;
   } else {
-    current = nextPrime(lbound);
-  }
+      current = nextPrime(lbound);
+    }
 while (current < hbound) {
-    uint64_t one = current;
-    uint64_t two = nextPrime(current);
+      uint64_t one = current;
+      uint64_t two = nextPrime(current);
     if (two >= hbound) {
-      break;
-    }
+        break;
+      }
     if (two - one == 2) {
-      cnt++;
-      current = two;
+        cnt++;
+        current = two;
     } else {
-      current = two;
+          current = two;
+        }
+      }
+      return cnt;
     }
-  }
-  return cnt;
-}
