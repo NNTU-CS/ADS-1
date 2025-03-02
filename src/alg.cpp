@@ -1,8 +1,6 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
-
-
 bool checkPrime(uint64_t value) {
   // вставьте код функции
   for (int i = 2; i < (value + 2) / 2; i++) {
@@ -30,8 +28,9 @@ uint64_t nextPrime(uint64_t value) {
   if (value2 <= 2) return 2;
   if (value2 % 2 == 0) value2++;
     while (true) {
-    if (checkPrime(value2)) 
+    if (checkPrime(value2)) {
     return value2;
+    }
     value2 += 2;
   }
 }
