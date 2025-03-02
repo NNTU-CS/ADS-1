@@ -26,10 +26,12 @@ uint64_t nextPrime(uint64_t value) {
   // вставьте код функции
   uint64_t value2 = value + 1;
   if (value2 <= 2) return 2;
-  if (value2 % 2 == 0) value2++;
+  if (value2 % 2 == 0) {
+      value2++;
+  }
     while (true) {
     if (checkPrime(value2)) {
-    return value2;
+      return value2;
     }
     value2 += 2;
   }
