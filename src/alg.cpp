@@ -8,7 +8,7 @@
       return false;
     }
     if (value == 2) {
-      return true
+      return true;
     }
     for (uint64_t i = 3; i * i <= value; i += 2) {
       if (value % i == 0) {
