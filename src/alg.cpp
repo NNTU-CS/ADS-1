@@ -88,7 +88,7 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
         }
         if (num1 && num2 && (i + 2) < hbound) {
             cnt++;
-        }
+        } 
     }
     return cnt;
 }
