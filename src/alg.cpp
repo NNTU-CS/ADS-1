@@ -3,7 +3,7 @@
 #include <cmath>
 #include "alg.h"
 bool checkPrime(uint64_t value) {
-	for (uint64_t i = 2; i*i <= value; ++i) {
+        for (uint64_t i = 2; i*i <= value; ++i) {
                 if (value % i == 0) {
        return false;
     }
@@ -31,8 +31,9 @@ uint64_t nextPrime(uint64_t value) {
 uint64_t sumPrime(uint64_t hbound) {
   uint64_t sum = 2;
   for (uint64_t i = 3; i < hbound; ++i) {
-    if (checkPrime(i))
-			 sum += i;
+    if (checkPrime(i)) {
+                sum += i;
+        }
          } return sum;
 }
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
