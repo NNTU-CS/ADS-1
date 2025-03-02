@@ -1,7 +1,8 @@
-#include <cstdint>
-#include "alg.h"
+//Copyright [2025] <Copyright Alexey Efimov>
 #include <iostream>
 #include <vector>
+#include "alg.h"
+#include <cstdint>
 #include <cmath>
 
 
@@ -13,7 +14,6 @@ bool checkPrime(uint64_t value) {
   }
   return true;
 }
-
 uint64_t nPrime(uint64_t n) {
  int createArrOfPrimes(int c) {
     std::vector<int> x;
@@ -35,7 +35,7 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-  ++value;
+   ++value;
     while(!checkPrime(value)) {
     ++value;
   }
