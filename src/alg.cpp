@@ -3,18 +3,12 @@
 #include <cmath>
 #include "alg.h"
 
-// Проверка, является ли число простым
 bool checkPrime(uint64_t value) {
-    if (value < 2) {
-        return false;
-    }
-    if (value == 2) {
-        return true;
-    }
-    if (value % 2 == 0) {
-        return false;
-    }
-    for (uint64_t i = 3; i * i <= value; i += 2) {
+    if (value <= 1) return false;
+    if (value == 2) return true;
+    if (value % 2 == 0) return false;
+    uint64_t limit = static_cast<uint64_t>(sqrt(value));
+    for (uint64_t i = 3; i <= limit; i += 2) {
         if (value % i == 0) {
             return false;
         }
@@ -22,49 +16,45 @@ bool checkPrime(uint64_t value) {
     return true;
 }
 
-// Нахождение n-го простого числа
 uint64_t nPrime(uint64_t n) {
-    uint64_t count = 0;
-    uint64_t num = 1;
-    while (count < n) {
-        ++num;
-        if (checkPrime(num)) {
-            ++count;
-        }
+    if (n <= 1) return 2;
+    uint64_t currentNum = 2;
+    uint64_t currentPos = 1;
+    while (currentPos < n) {
+        currentNum = nextPrime(currentNum);
+        currentPos++;
     }
-    return num;
+    return currentNum;
 }
 
-// Поиск следующего простого числа
 uint64_t nextPrime(uint64_t value) {
-    do {
-        ++value;
-    } while (!checkPrime(value));
-    return value;
+    uint64_t newNum = (value < 2) ? 2 : value + 1;
+    if (newNum % 2 == 0) newNum++;
+    while (!checkPrime(newNum)) {
+        newNum += 2;
+    }
+    return newNum;
 }
 
-// Сумма всех простых чисел до hbound
 uint64_t sumPrime(uint64_t hbound) {
-    uint64_t sum = 0;
-    for (uint64_t i = 2; i < hbound; ++i) {
+    if (hbound <= 2) return 0;
+    uint64_t sm = 2; 
+    for (uint64_t i = 3; i < hbound; i += 2) {
         if (checkPrime(i)) {
-            sum += i;
+            sm += i;
         }
     }
-    return sum;
+    return sm;
 }
 
-// Подсчет пар простых чисел-близнецов в диапазоне
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     uint64_t count = 0;
-    uint64_t prev = 0;
-    for (uint64_t i = lbound; i < hbound; ++i) {
-        if (checkPrime(i)) {
-            if (prev && i - prev == 2) {
-                ++count;
-            }
-            prev = i;
+    uint64_t i = (lbound % 2 == 0) ? lbound + 1 : lbound;
+    while (i < hbound - 2) {
+        if (checkPrime(i) && checkPrime(i + 2)) {
+            count++;
         }
+        i += 2;
     }
     return count;
 }
