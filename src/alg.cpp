@@ -1,19 +1,18 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
-
 													
 bool checkPrime(uint64_t value) {
   if (value < 2)
   	return false;
-  for (uint64_t i = 2; i*i <= value; ++i)
-	  {
+  for (uint64_t i = 2; i*i <= value; ++i) {
 		  return false;
-	  }
-  return true;  
+}
+return true;  
 } 
 
-uint64_t nPrime(uint64_t n) {
+uint64_t nPrime(uint64_t n) 
+{
 	 if (n==0)
 		return 0;
 	 uint64_t count = 0, value = 2;
@@ -22,7 +21,7 @@ uint64_t nPrime(uint64_t n) {
 			 if(checkPrime(value))
 			 {
 				 ++count;
-				 if (count == n)
+			      if (count == n)
 					 return value;
 			 }
 		 }
