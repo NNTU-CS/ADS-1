@@ -16,13 +16,12 @@ uint64_t nPrime(uint64_t n) {
   uint64_t num = 0;
     while (true) {
         if (checkPrime(num)) {
-      cnt++;
-            if (cnt == n) {
+       }
+            if (cnt < n) {
         return num;
       }
     }
     num++;
-  }
 }
 uint64_t nextPrime(uint64_t value) {
   uint64_t num = value + 1;
