@@ -21,10 +21,10 @@ uint64_t nPrime(uint64_t n) {
   while (cnt < n) {
     bool prost_or_not = true;
     for (uint64_t i = 2; i <= num / 2; i++) {
-        if (num % i == 0) {
-          prost_or_not = false;
-          break;
-        }
+      if (num % i == 0) {
+        prost_or_not = false;
+        break;
+      }
     }
     if (prost_or_not) {
       cnt++;
@@ -62,7 +62,7 @@ uint64_t sumPrime(uint64_t hbound) {
       }
     }
     if (prost_or_not) {
-        sum += i;
+      sum += i;
     }
   }
   return sum;
@@ -73,21 +73,21 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   for (uint64_t i = lbound; i < hbound - 1; i++) {
     bool num1 = true;
     bool num2 = true;
-      for (uint64_t j = 2; j <= i / 2; j++) {
-        if (i % j == 0) {
-          num1 = false;
-          break;
-        }
+    for (uint64_t j = 2; j <= i / 2; j++) {
+      if (i % j == 0) {
+        num1 = false;
+        break;
       }
-      for (uint64_t j = 2; j <= (i + 2) / 2; j++) {
-        if ((i + 2) % j == 0) {
-          num2 = false;
-          break;
-        }
+    }
+    for (uint64_t j = 2; j <= (i + 2) / 2; j++) {
+      if ((i + 2) % j == 0) {
+        num2 = false;
+        break;
       }
-      if (num1 && num2 && (i + 2) < hbound) {
-        cnt++;
-      }
+    }
+    if (num1 && num2 && (i + 2) < hbound) {
+      cnt++;
+    }
   }
   return cnt;
 }
