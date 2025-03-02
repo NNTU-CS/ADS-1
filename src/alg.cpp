@@ -12,24 +12,17 @@ bool checkPrime(uint64_t value) {
   }
   return true;
 }
-uint64_t nPrime(uint64_t n) {
-  int createArrOfPrimes(int c) {
-    std::vector<int> x;
-        for (int i = 2; i <= c; i++) {
-            if (checkPrime(i)) {
-        x.push_back(i);
-      }
-    }
-    return x;
-  }
 
-  int b = createArrOfPrimes(10000);
-    for (size_t i = 0; i < b.size(); i++) {
-        if (i == n) {
-      return b[i];
+uint64_t nPrime(uint64_t n) {
+    int position = 1;
+    int num = 2;
+    while (position < n) {
+      num++;
+      if (checkPrime(num)) {
+        position++;
     }
+    return num;
   }
-  return -1;
 }
 
 uint64_t nextPrime(uint64_t value) {
