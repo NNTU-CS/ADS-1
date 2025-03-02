@@ -51,7 +51,7 @@ uint64_t sumPrime(uint64_t hbound) {
   for (uint64_t k = 2; k < hbound; k++) {
       if (checkPrime(k)) {
       sum += k;
-  }
+      }
   }
   return sum;
 }
