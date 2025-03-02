@@ -34,13 +34,13 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-    uint64_t one = 2;
-    uint64_t counter = 0;
+  uint64_t one = 2;
+  uint64_t counter = 0;
     while (one < hbound) {
-      counter += one;
-      one = nextPrime(one);
-    }
-    return counter;
+    counter += one;
+    one = nextPrime(one);
+  }
+  return counter;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
