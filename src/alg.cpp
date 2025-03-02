@@ -24,7 +24,8 @@ bool checkPrime(uint64_t value) {
 
 // Нахождение n-го простого числа
 uint64_t nPrime(uint64_t n) {
-    uint64_t count = 0, num = 1;
+    uint64_t count = 0;
+    uint64_t num = 1;
     while (count < n) {
         ++num;
         if (checkPrime(num)) {
