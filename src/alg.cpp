@@ -1,6 +1,8 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
+
+
   bool checkPrime(uint64_t value) {
     if (value < 2) {
       return false;
@@ -21,7 +23,7 @@
       }
       chislo++;
     }
-    return chislo;
+    return chislo - 1;
   }
   uint64_t nextPrime(uint64_t value) {
     uint64_t param = value + 1;
@@ -48,4 +50,3 @@
     }
     return count;
   }
-  
