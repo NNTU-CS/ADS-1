@@ -6,7 +6,6 @@
     if (value < 2) {
       return false;
     }
-    
     for (uint64_t i = 2; i * i <= value; ++i) {
       if (value % i == 0) {
         return false;
@@ -22,7 +21,7 @@
       nomer++;
       }
       chislo++;
-    }
+    }0
     return chislo + 1;
   }
   uint64_t nextPrime(uint64_t value) {
@@ -50,4 +49,3 @@
     }
     return count;
   }
-  
