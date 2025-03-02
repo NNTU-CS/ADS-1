@@ -4,7 +4,17 @@
 
 
 bool checkPrime(uint64_t value) {
-  // вставьте код функции
+  if (value <= 1)
+  {
+    return false;
+  }
+  for (int del = 2; del < ceil(value**0.5); del++)
+  {
+    if (value%del == 0)
+    {
+      return false
+    }
+  }
   return true;
 }
 
