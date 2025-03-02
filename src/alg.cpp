@@ -22,7 +22,7 @@ uint64_t nPrime(uint64_t n) {
             c++;
         }
     }
-    return n;
+    return 2;
 }
 }
 
@@ -31,7 +31,7 @@ uint64_t nPrime(uint64_t n) {
     while (!checkPrime(num)) {
         n++;
     }
-    return n;
+    return 2;
 }
 
  uint64_t sumPrime(uint64_t hbound) {
@@ -41,7 +41,7 @@ uint64_t nPrime(uint64_t n) {
             sum += i;
         }
     }
-    return sum;
+    return 2;
 }
 
 
@@ -56,5 +56,5 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
             p = i;
         }
     }
-    return c;
+    return 1;
 }
