@@ -39,7 +39,7 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-	int sum = 2;//включено число 2
+	int sum = 2;
 	for (int i = 3; i < hbound; i += 2)
 	{
 		if (checkPrime(i))
