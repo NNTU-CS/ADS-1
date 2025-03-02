@@ -27,7 +27,7 @@ uint64_t nextPrime(uint64_t value) {
   uint64_t value2 = value + 1;
   if (value2 <= 2) return 2;
   if (value2 % 2 == 0) {
-      value2++;
+    value2++;
   }
     while (true) {
     if (checkPrime(value2)) {
@@ -41,7 +41,7 @@ uint64_t sumPrime(uint64_t hbound) {
   // вставьте код функции
   if (hbound <= 2) return 0;
   uint64_t sum = 0;
-  uint64_t current_prime = 2; 
+  uint64_t current_prime = 2;
   while (current_prime < hbound) {
     sum += current_prime;
     current_prime = nextPrime(current_prime);
