@@ -19,9 +19,9 @@
     while (nomer < n) {
       if (checkPrime(chislo)) {
       nomer++;
-      }
+        }
       chislo++;
-    }0
+    }
     return chislo + 1;
   }
   uint64_t nextPrime(uint64_t value) {
@@ -29,7 +29,7 @@
     while (!checkPrime(param)) {
       param++;
       }
-    return param;
+      return param;
     }
   uint64_t sumPrime(uint64_t hbound) {
     uint64_t sum = 0;
