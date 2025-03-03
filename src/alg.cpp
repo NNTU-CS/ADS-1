@@ -45,9 +45,9 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-  uint64_t sum = 0;
+  uint64_t sum;
   for (uint64_t i = 2; i < hbound; ++i) {
-    if (checkPrime(sum)) {
+    if (checkPrime(i)) {
       sum += i;
     }
   }
@@ -55,7 +55,7 @@ uint64_t sumPrime(uint64_t hbound) {
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  uint64_t count = 0;
+  uint64_t count;
   std::vector<uint64_t> primes;
 
   for (uint64_t i = lbound; i < hbound; ++i) {
