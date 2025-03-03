@@ -1,17 +1,12 @@
 // Copyright 2022 NNTU-CS
-#include <cmath>
 #include <cstdint>
-
+#include <cmath>
 #include "alg.h"
 
-namespace {
 
-bool check_prime(uint64_t value) {
-  if (value < 2) {
-    return false;
-  }
-  uint64_t sqrt_val = static_cast<uint64_t>(std::sqrt(value)) + 1;
-  for (uint64_t i = 2; i < sqrt_val; ++i) {
+bool checkPrime(uint64_t value) {
+  uint64_t koren = static_cast<uint64_t>(std::pow(value, 0.5)) + 1;
+  for (uint64_t i = 2; i != koren; ++i) {
     if (value % i == 0) {
       return false;
     }
@@ -19,58 +14,81 @@ bool check_prime(uint64_t value) {
   return true;
 }
 
-}
-
-bool checkPrime(uint64_t value) {
-  return check_prime(value);
-}
-
 uint64_t nPrime(uint64_t n) {
-  if (n == 0) {
-    return 0;
-  }
-  uint64_t count = 0;
+  uint64_t fl_n = 0;
   uint64_t prime = 0;
-
-  for (uint64_t num = 2; count < n; ++num) {
-    if (check_prime(num)) {
-      prime = num;
-      ++count;
+  for (uint64_t j = 2; fl_n != n; ++j) {
+    bool flag = true;
+    uint64_t koren = static_cast<uint64_t>(std::pow(j, 0.5)) + 1;
+    for (uint64_t i = 2; i != koren; ++i) {
+      if (j % i == 0) {
+        flag = false;
+        break;
+      }
+    }
+    if (flag) {
+      prime = j;
+      ++fl_n;
     }
   }
   return prime;
 }
 
 uint64_t nextPrime(uint64_t value) {
-  for (uint64_t num = value + 1;; ++num) {
-    if (check_prime(num)) {
-      return num;
+  uint64_t prime = 0;
+  for (uint64_t j = value + 1; ; ++j) {
+    bool flag = true;
+    uint64_t koren = static_cast<uint64_t>(std::pow(j, 0.5)) + 1;
+    for (uint64_t i = 2; i != koren; ++i) {
+      if (j % i == 0) {
+        flag = false;
+        break;
+      }
+    }
+    if (flag) {
+      prime = j;
+      return prime;
     }
   }
   return 2;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-  uint64_t sum = 0;
-  for (uint64_t num = 2; num < hbound; ++num) {
-    if (check_prime(num)) {
-      sum += num;
+  uint64_t prime = 0;
+  for (uint64_t j = 2; j != hbound; ++j) {
+    bool flag = true;
+    uint64_t koren = static_cast<uint64_t>(std::pow(j, 0.5)) + 1;
+    for (uint64_t i = 2; i != koren; ++i) {
+      if (j % i == 0) {
+        flag = false;
+        break;
+      }
+    }
+    if (flag) {
+      prime += j;
     }
   }
-  return sum;
+  return prime;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  uint64_t prev_prime = static_cast<uint64_t>(-10);
-  uint64_t count = 0;
-
-  for (uint64_t num = lbound; num < hbound; ++num) {
-    if (check_prime(num)) {
-      if (prev_prime + 2 == num) {
-        ++count;
+  uint64_t first_prime = static_cast<uint64_t>(-10);
+  int koll = 0;
+  for (uint64_t j = lbound; j != hbound; ++j) {
+    bool flag = true;
+    uint64_t koren = static_cast<uint64_t>(std::pow(j, 0.5)) + 1;
+    for (uint64_t i = 2; i != koren; ++i) {
+      if (j % i == 0) {
+        flag = false;
+        break;
       }
-      prev_prime = num;
+    }
+    if (flag) {
+      if (first_prime == j - 2) {
+        ++koll;
+      }
+      first_prime = j;
     }
   }
-  return count;
+  return koll;
 }
