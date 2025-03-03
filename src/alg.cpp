@@ -2,7 +2,6 @@
 #include <cstdint>
 #include "alg.h"
 
-
 bool checkPrime(uint64_t value) {
   // вставьте код функции
   if (value < 2) return false;
@@ -30,7 +29,7 @@ uint64_t nPrime(uint64_t n) {
       count++;
     }
   }
-  return num;
+  return number;
 }
 
 uint64_t nextPrime(uint64_t value) {
@@ -61,10 +60,10 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t count = 0;
   uint64_t prevPrime = 0;
   for (uint64_t i = lbound; i < hbound; i++) {
-      if (checkPrime(i)) {
-          prevPrime = i;
-          break;
-      }
+    if (checkPrime(i)) {
+      prevPrime = i;
+      break;
+    }
   }
 
   for (uint64_t i = prevPrime + 1; i < hbound; i++) {
