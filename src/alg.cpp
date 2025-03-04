@@ -31,8 +31,7 @@ uint64_t nextPrime(uint64_t value) {
   uint64_t num;
   if (value % 2 == 0) {
     num = value + 1;
-  }
-  else {
+  } else {
     num = value + 2;
   }
   while (!checkPrime(num)) {
