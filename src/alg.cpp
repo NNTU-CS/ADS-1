@@ -16,29 +16,20 @@ bool checkPrime(uint64_t value) {
 }
 
 uint64_t nPrime(uint64_t n) {
-  uint64_t i = 0, a = 2, k = 0;
+  uint64_t i = 0, a = 2;
   while (i < n) {
-    k = 0;
-    for (int j = 1; j <= sqrt(a); j++) {
-      if (a % j == 0)
-        k += 1;
-    }
-    if (k == 1)
+    if (checkPrime(a)) {
       i += 1;
+    }            
     a += 1;
   }
   return a - 1;
 }
 
 uint64_t nextPrime(uint64_t value) {
-  uint64_t i = 0, k = 0;
-  while (k != 1) {
-    k = 0;
+  value += 1;
+  while (!checkPrime(value)) {
     value += 1;
-    for (int j = 1; j <= sqrt(value); j++) {
-      if (value % j == 0)
-         k += 1;
-    }
   }
   return value;
 }
