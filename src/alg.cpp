@@ -32,33 +32,33 @@ uint64_t nextPrime(uint64_t value) {
   if (value % 2 == 0) {
     num = value + 1;
   } else {
-    num = value + 2;
-  }
+      num = value + 2;
+    }
   while (!checkPrime(num)) {
-    num += 2;
+      num += 2;
+    }
+    return num;
   }
-  return num;
-}
 
 uint64_t sumPrime(uint64_t hbound) {
-  if (hbound <= 2) return 0;
-  uint64_t sum = 0;
+    if (hbound <= 2) return 0;
+    uint64_t sum = 0;
   for (uint64_t k = 2; k < hbound; k++) {
     if (checkPrime(k)) {
-      sum += k;
+        sum += k;
+      }
     }
+    return sum;
   }
-  return sum;
-}
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  if (hbound < 4) return 0;
-  uint64_t k = 0;
-  uint64_t nch = (lbound % 2 == 0) ? lbound + 1 : lbound;
+    if (hbound < 4) return 0;
+    uint64_t k = 0;
+    uint64_t nch = (lbound % 2 == 0) ? lbound + 1 : lbound;
   for (uint64_t j = nch; j + 2 < hbound; j += 2) {
     if (checkPrime(j) && checkPrime(j + 2)) {
-      k++;
+        k++;
+      }
     }
+    return k;
   }
-  return k;
-}
