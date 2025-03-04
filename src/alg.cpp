@@ -24,13 +24,13 @@ uint64_t nPrime(uint64_t n) {
   uint64_t digit = 2;
   uint64_t count = 0;
   while (1) {
-    if (checkPrime(final)) {
+    if (checkPrime(digit)) {
       count += 1;
     }
     if (count == n) {
       return digit;
     }
-    final += 1;
+    digit += 1;
   }
 }
 
