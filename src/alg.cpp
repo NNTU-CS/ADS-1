@@ -47,7 +47,7 @@ uint64_t sumPrime(uint64_t hbound) {
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   if (hbound < 2)
   return 0;
-  bool* chPrime = (bool*)malloc(hbound * sizeof(bool));
+  <bool*> chPrime = (bool*)malloc(hbound * sizeof(bool));
   if (!chPrime)
   return 0;
   for (uint64_t i = 0; i < hbound; ++i) {
