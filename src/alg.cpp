@@ -12,8 +12,7 @@ bool checkPrime(uint64_t value) {
   }
   if (k == 1) {
     return true;
-  } 
-  else {
+  } else {
     return false;
   }
 }
@@ -58,4 +57,5 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   }
   return k;
 }
+
 
