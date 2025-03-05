@@ -20,7 +20,7 @@ uint64_t nPrime(uint64_t n) {
   while (i < n) {
     if (checkPrime(a)) {
       i += 1;
-    }            
+    }
     a += 1;
   }
   return a - 1;
@@ -55,3 +55,4 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   }
   return k;
 }
+
