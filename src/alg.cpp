@@ -6,9 +6,7 @@
 bool checkPrime(uint64_t value) {
   uint64_t k = 0;
   for (int i = 1; i <= sqrt(value); i++) {
-    if (value % i == 0) {
-      k += 1;
-    }
+    if (value % i == 0) k += 1;
   }
   if (k == 1) {
     return true;
@@ -57,5 +55,3 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   }
   return k;
 }
-
-
