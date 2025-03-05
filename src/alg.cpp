@@ -49,7 +49,7 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   return 0;
   bool* chPrime = (bool*)malloc(hbound * sizeof(bool));
   if (!chPrime)
-	return 0;
+  return 0;
   for (uint64_t i = 0; i < hbound; ++i) {
     chPrime[i] = true;
   }
@@ -57,15 +57,15 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   for (uint64_t i = 2; i * i < hbound; ++i) {
     if (chPrime[i]) {
     for (uint64_t j = i * i; j < hbound; j += i) {
-      chPrime[j] = false;
-        }
+        chPrime[j] = false;
       }
+    }
   }
   uint64_t count = 0;
   for (uint64_t i = lbound; i < hbound - 2; ++i) {
     if (chPrime[i] && chPrime[i + 2]) {
-    count++;
-      }
+      count++;
+    }
   }
   free(chPrime);
   return count;
