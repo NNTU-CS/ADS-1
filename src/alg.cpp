@@ -65,7 +65,7 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     }
   }
 
-  for (size_t j = 1; j < primes.size(); ++j) {
+  for (uint64_t j = 1; j < primes.size(); ++j) {
     if (primes[j] - primes[j - 1] == 2) {
       count++;
     }
