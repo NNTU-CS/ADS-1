@@ -56,19 +56,26 @@ uint64_t sumPrime(uint64_t hbound) {
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  uint64_t count = 0;
-  std::vector<uint64_t> primes;
-
-  for (uint64_t i = lbound; i < hbound; ++i) {
-    if (nPrime(i)) {
-      primes.push_back(i);
+  if (hbound < 2) return 0;
+  bool* checkPrime = new bool[hbound];
+  if (!checkPrime) return 0;
+  for (uint64_t i = 0; i < hbound; ++i) {
+    checkPrime[i] = true;
+  }
+  checkPrime[0] = checkPrime[1] = false;
+  for (uint64_t i = 2; i * i < hbound; ++i) {
+    if (checkPrime[i]) {
+      for (uint64_t j = i * i; j < hbound; j += i) {
+        checkPrime[j] = false;
+      }
     }
   }
-
-  for (uint64_t j = 1; j < primes.size(); ++j) {
-    if (primes[j] - primes[j - 1] == 2) {
+  uint64_t count = 0;
+  for (uint64_t i = lbound; i < hbound - 2; ++i) {
+    if (checkPrime[i] && checkPrime[i + 2]) {
       count++;
     }
   }
+  delete[] checkPrime;  
   return count;
 }
