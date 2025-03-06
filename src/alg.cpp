@@ -16,7 +16,7 @@ bool checkPrime(uint64_t value) {
 
 uint64_t nPrime(uint64_t n) {
   uint64_t fl_n = 0;
-  uint64_t prime;
+  uint64_t prime = 0;
   if (n < 1) {
     return false;
   }
