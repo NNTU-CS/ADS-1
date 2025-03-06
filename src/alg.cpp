@@ -16,7 +16,10 @@ bool checkPrime(uint64_t value) {
 
 uint64_t nPrime(uint64_t n) {
   uint64_t fl_n = 0;
-  uint64_t prime = 0;
+  uint64_t prime;
+  if (n <= 0) {
+    prime = 0;
+  }
   for (uint64_t j = 2; fl_n != n; ++j) {
     bool flag = true;
     uint64_t koren = static_cast<uint64_t>(std::pow(j, 0.5)) + 1;
@@ -35,7 +38,10 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-  uint64_t prime = 0;
+  uint64_t prime;
+  if (n <= 0) {
+    prime = 0;
+  }
   for (uint64_t j = value + 1; ; ++j) {
     bool flag = true;
     uint64_t koren = static_cast<uint64_t>(std::pow(j, 0.5)) + 1;
