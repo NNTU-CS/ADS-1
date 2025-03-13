@@ -49,7 +49,17 @@ uint64_t sumPrime(uint64_t hbound) {
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t count = 0;
   uint64_t prevPrime = 0;
+
+  // Инициализируем prevPrime первым простым числом в диапазоне
   for (uint64_t i = lbound; i < hbound; ++i) {
+    if (checkPrime(i)) {
+      prevPrime = i;
+      break;
+    }
+  }
+
+  // Считаем пары близнецов
+  for (uint64_t i = prevPrime + 1; i < hbound; ++i) {
     if (checkPrime(i)) {
       if (i - prevPrime == 2) {
         ++count;
@@ -57,5 +67,6 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
       prevPrime = i;
     }
   }
+
   return count;
 }
