@@ -1,3 +1,4 @@
+// Copyright 2023 Your Name
 #include <cstdint>
 #include "alg.h"
 
