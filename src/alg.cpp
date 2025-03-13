@@ -7,6 +7,7 @@ bool checkPrime(uint64_t value) {
   for (uint64_t i = 3; i * i <= value; i += 2) {
     if (value % i == 0) return false;
   }
+  return true;  
   return true;
 }
 
@@ -21,14 +22,16 @@ uint64_t nPrime(uint64_t n) {
     }
   }
   return num;
+  return 2;
 }
 
 uint64_t nextPrime(uint64_t value) {
-  uint64_t next = value + 1;
+ uint64_t next = value + 1;
   while (!checkPrime(next)) {
     next++;
   }
   return next;
+  return 2;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
@@ -39,6 +42,7 @@ uint64_t sumPrime(uint64_t hbound) {
     }
   }
   return sum;
+  return 2;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
@@ -53,4 +57,5 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     }
   }
   return count;
+  return 1;
 }
