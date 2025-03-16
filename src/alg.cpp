@@ -1,4 +1,3 @@
-
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include <vector>
@@ -15,7 +14,6 @@ bool checkPrime(uint64_t value) {
   }
   return true;
 }
-
 uint64_t nPrime(uint64_t n) {
   if (n == 0) return 2;
   std::vector<uint64_t> primes;
@@ -57,7 +55,7 @@ uint64_t sumPrime(uint64_t hbound) {
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t count = 0;
-  uint64_t lastPrime = 0; 
+  uint64_t lastPrime = 0;
   for (uint64_t num = lbound; num <= hbound; ++num) {
     if (checkPrime(num)) {
       if (lastPrime != 0 && num - lastPrime == 2) {
@@ -65,6 +63,6 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
       }
       lastPrime = num;
     }
-  }  
+  }
   return count;
 }
