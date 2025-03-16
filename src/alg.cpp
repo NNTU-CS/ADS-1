@@ -8,7 +8,7 @@
 bool checkPrime(uint64_t value) {
   if (value < 2) return false;
   for (uint64_t i = 2; i <= sqrt(value); ++i) {
-      if (value % i == 0) return false;
+    if (value % i == 0) return false;
   }
   return true;
 }
@@ -32,7 +32,7 @@ uint64_t nextPrime(uint64_t value) {
       return num;
     }
     ++num;
-  } 
+  }
 }
 
 uint64_t sumPrime(uint64_t hbound) {
@@ -41,7 +41,7 @@ uint64_t sumPrime(uint64_t hbound) {
     if (checkPrime(i)) {
       sum += i;
     }
-  }  
+  }
   return sum;
 }
 
@@ -51,6 +51,6 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     if (checkPrime(i) && checkPrime(i + 2)) {
       ++count;
     }
-  }  
+  }
   return count;
 }
