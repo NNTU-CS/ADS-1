@@ -3,12 +3,15 @@
 
 
 bool checkPrime(uint64_t value) {
-	for (int i = 2; i < value; i++) {
-		if (value % i == 0) {
-			return false;
-		}
-	}
-	return true;
+  if (value < 2) {
+    return false;
+  }
+  for (int i = 2; i * i <= value; ++i) {
+    if (value % i == 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 uint64_t nPrime(int n) {
