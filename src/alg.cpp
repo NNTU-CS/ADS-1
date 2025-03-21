@@ -14,30 +14,19 @@ bool checkPrime(uint64_t value) {
   return true;
 }
 
-uint64_t nPrime(int n) {
-	if (n == 1) {
-		return 2;
+uint64_t nPrime(uint64_t n) {
+	if (n < 1) {
+		return -1;
 	}
-	else {
-		int num_ch = 1, kdel;
-		for (int i = 3; i > 0;i++) {
-			
-			kdel = 0;
-			for (int j = 2; j < i; j++) {
-				if (i % j == 0) {
-					kdel += 1;
-				}
-			}
-			if (kdel == 0) {
-				num_ch++;
-			}
-			if (n == num_ch) {
-				return i;
-				break;
-			}
+	uint64_t count = 0;
+	uint64_t number = 1;
+	while (count < n) {
+		number++;
+		if (checkPrime(number)) {
+			count++;
 		}
 	}
-	return -1;
+	return number;
 }
 
 uint64_t nextPrime(uint64_t value) {
