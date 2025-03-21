@@ -37,6 +37,7 @@ uint64_t nPrime(int n) {
 			}
 		}
 	}
+	return -1;
 }
 
 uint64_t nextPrime(uint64_t value) {
@@ -52,6 +53,7 @@ uint64_t nextPrime(uint64_t value) {
 			return i;
 		}
 	}
+	return -1;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
@@ -93,6 +95,4 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
 		}
 	}
 	return sch;
-}
-return sch;
-}
+};
