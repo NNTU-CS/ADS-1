@@ -45,9 +45,9 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-	int sum = 0, k;
+	int sum = 0;
 	for (int i = 2; i < hbound; i++) {
-		k = 0;
+		int k = 0;
 		for (int j = 2; j < i; j++) {
 			if (i % j == 0) {
 				k++;
@@ -61,15 +61,15 @@ uint64_t sumPrime(uint64_t hbound) {
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  int k, sch = 0;
-  for (lbound; lbound < hbound - 2; lbound++) {
-    k = 0;
-    for (int j = 2; j < lbound; j++) {
-      if (lbound % j == 0) {
+  int sch = 0, l=lbound;
+  for (l; l < hbound - 2; l++) {
+    int k = 0;
+    for (int j = 2; j < l; j++) {
+      if (l % j == 0) {
         k++;
       }
     }
-    int q = lbound + 2;
+    int q = l + 2;
     if (k == 0) {
       k = 0;
       for (int i = 2; i < q; i++) {
