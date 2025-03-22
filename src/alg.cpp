@@ -30,39 +30,39 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-	for (int i = value + 1; i > 0; i++) {
-		int k = 0;
-		for (int j = 2; j < i; j++) {
-			if (i % j == 0) {
-				k++;
-			}
-		}
-		if (k == 0) {
-			return i;
-		}
-	}
-	return -1;
+  for (int i = value + 1; i > 0; i++) {
+    int k = 0;
+    for (int j = 2; j < i; j++) {
+      if (i % j == 0) {
+        k++;
+      }
+    }
+    if (k == 0) {
+      return i;
+    }
+  }
+  return -1;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-	int sum = 0;
-	for (int i = 2; i < hbound; i++) {
-		int k = 0;
-		for (int j = 2; j < i; j++) {
-			if (i % j == 0) {
-				k++;
-			}
-		}
-		if (k == 0) {
-			sum += i;
-		}
-	}
-	return sum;
+  int sum = 0;
+  for (int i = 2; i < hbound; i++) {
+    int k = 0;
+    for (int j = 2; j < i; j++) {
+      if (i % j == 0) {
+        k++;
+      }
+    }
+    if (k == 0) {
+      sum += i;
+    }
+  }
+  return sum;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  int sch = 0, l=lbound;
-  for (l; l < hbound - 2; l++) {
+  int sch = 0;
+  for (int l= lbound; l < hbound - 2; l++) {
     int k = 0;
     for (int j = 2; j < l; j++) {
       if (l % j == 0) {
