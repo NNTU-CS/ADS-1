@@ -38,7 +38,7 @@ uint64_t nextPrime(uint64_t value) {
     for (uint64_t i = n; ; i++) {
         bool flag = true;
         for (int j = 2; j <= (i / 2)+1; j++) {
-            if(i % j == 0) {
+            if (i % j == 0) {
                 flag = false;
                 break;
             }
