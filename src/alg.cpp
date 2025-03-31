@@ -20,6 +20,9 @@ bool checkPrime(uint64_t value) {
 }
 
 uint64_t nPrime(uint64_t n) {
+  if (n == 1) {
+    return 2;
+  }
   int count = 1;
   int num = 2;
   while (count < n) {
