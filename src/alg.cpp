@@ -11,7 +11,7 @@ bool checkPrime(uint64_t value) {
     return true;
   }
   if (value % 2 == 0) {
-    return true;
+    return false;
   }
   uint64_t limit = value/2;
   for (int i = 2; i < limit; i++) {
