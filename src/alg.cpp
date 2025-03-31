@@ -4,11 +4,14 @@
 
 
 bool checkPrime(uint64_t value) {
-  if (value < 3) {
-    if (value == 2) {
-      return true;
-    }
+  if (value < 2) {
     return false;
+  }
+  if (value == 2) {
+    return true;
+  }
+  if (value % 2 == 0) {
+    return true;
   }
   uint64_t limit = value/2;
   for (int i = 2; i < limit; i++) {
@@ -27,7 +30,7 @@ uint64_t nPrime(uint64_t n) {
   int num = 2;
   while (count < n) {
     num++;
-    if (checkPrime(num) == true) {
+    if (checkPrime(num)) {
       count++;
     }
   }
