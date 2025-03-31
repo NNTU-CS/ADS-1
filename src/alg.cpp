@@ -20,12 +20,12 @@ bool checkPrime(uint64_t value) {
 }
 
 uint64_t nPrime(uint64_t n) {
-  int counter = 1;
+  int count = 1;
   int num = 2;
-  while (counter < n) {
+  while (count < n) {
     num++;
     if (checkPrime(num) == true) {
-      counter++;
+      count++;
     }
   }
   return num;
@@ -56,5 +56,5 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
       count++;
     }
   }
-  return 1;
+  return count;
 }
