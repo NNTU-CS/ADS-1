@@ -2,7 +2,6 @@
 #include <cstdint>
 #include "alg.h"
 
-
 bool checkPrime(uint64_t value) {
   if (value < 2) {
     return false;
@@ -35,7 +34,7 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-    uint64_t incom = value + 1;
+  uint64_t incom = value + 1;
   while (true) {
     bool sns = true;
     for (uint64_t i = 2; i <= incom / 2; i++) {
