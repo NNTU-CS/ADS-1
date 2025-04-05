@@ -6,15 +6,9 @@
 bool checkPrime(uint64_t value) {
   if (value < 2) {
     return false;
-  } 
-  if (value == 2 || value == 3) {
-    return true;
   }
-  if (value % 2 == 0 || value % 3 == 0) {
-    return false;
-  }
-  for (uint64_t i = 5; i * i <= value; i += 6) {
-    if (value % i == 0 || value % (i + 2) == 0) {
+  for (uint64_t i = 2; i <= value / 2; i++) {
+    if (value % i == 0) {
       return false;
     }
   }
@@ -23,38 +17,76 @@ bool checkPrime(uint64_t value) {
 
 uint64_t nPrime(uint64_t n) {
   uint64_t count = 0;
-  uint64_t checknow = 2;
-    while (count < n) {
-      if (checkPrime(checknow)) {
-        ++count;
+  uint64_t num = 2;
+  while (count < n) {
+    bool sns = true;
+    for (uint64_t i = 2; i <= num / 2; i++) {
+      if (num % i == 0) {
+        sns = false;
+        break;
       }
-      ++checknow;
     }
-    return checknow - 1;
+    if (sns) {
+      count++;
+    }
+    num++;
+  }
+  return num - 1;
 }
 
 uint64_t nextPrime(uint64_t value) {
-  do {
-    ++value;
-  }while (!checkPrime(value));
-  return value;
+    uint64_t incom = value + 1;
+  while (true) {
+    bool sns = true;
+    for (uint64_t i = 2; i <= incom / 2; i++) {
+      if (incom % i == 0) {
+        sns = false;
+        break;
+      }
+    }
+    if (sns) {
+      return incom;
+    }
+    incom++;
+  }
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-  uint64_t sum = 0;
-  for (uint64_t i = 2; i < hbound; ++i) {
-    if (checkPrime(i)) {
-      sum += i;
+  uint64_t summ = 0;
+  for (uint64_t i = 2; i < hbound; i++) {
+    bool sns = true;
+    for (uint64_t j = 2; j <= i / 2; j++) {
+      if (i % j == 0) {
+        sns = false;
+        break;
+      }
+    }
+    if (sns) {
+      summ += i;
     }
   }
-  return sum;
+  return summ;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t count = 0;
-  for (uint64_t i = lbound; i <= hbound - 2; ++i) {
-    if (i + 2 < hbound && checkPrime(i) && checkPrime(i + 2)) {
-      ++count;
+  for (uint64_t i = lbound; i < hbound - 1; i++) {
+    bool num1 = true;
+    bool num2 = true;
+    for (uint64_t j = 2; j <= i / 2; j++) {
+      if (i % j == 0) {
+        num1 = false;
+        break;
+      }
+    }
+    for (uint64_t j = 2; j <= (i + 2) / 2; j++) {
+      if ((i + 2) % j == 0) {
+        num2 = false;
+        break;
+      }
+    }
+    if (num1 && num2 && (i + 2) < hbound) {
+      count++;
     }
   }
   return count;
