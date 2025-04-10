@@ -1,6 +1,5 @@
 #include <cstdint>
-
-// Copyright 2023 Your Name or Organization
+// Copyright 2022 NNTU-CS
 
 bool checkPrime(uint64_t value) {
     if (value <= 1) {
