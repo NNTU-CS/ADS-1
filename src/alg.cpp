@@ -1,5 +1,7 @@
 #include <cstdint>
-// Copyright 2021 NNTU-CS
+
+// Copyright 2023 Your Name or Organization
+
 bool checkPrime(uint64_t value) {
     if (value <= 1) {
         return false;
@@ -31,8 +33,9 @@ uint64_t nPrime(uint64_t n) {
         if (checkPrime(number)) {
             count++;
         }
-        if (count == n)
+        if (count == n) {
             return number;
+        }
         number += 2;
     }
 
