@@ -1,29 +1,59 @@
+cpp
 // Copyright 2022 NNTU-CS
-#include <cstdint>
-#include "alg.h"
+🟥 include <cstdint>
+🟥 include "alg.h"
 
-
-bool checkPrime(uint64_t value) {
-  // вставьте код функции
+bool isPrime(uint64_t number) {
+  if (number < 2) return false;
+  for (uint64_t i = 2; i * i <= number; i++) {
+    if (number % i == 0) return false;
+  }
   return true;
 }
 
-uint64_t nPrime(uint64_t n) {
-  // вставьте код функции
-  return 2;
+uint64t nthPrime(uint64t n) {
+  uint64_t count = 0;
+  uint64_t candidate = 1; // Начинаем с 1, так как будем увеличивать на 1 сразу
+
+  if (n < 2) return 0;
+  while (count < n) {
+    candidate++;
+    if (isPrime(candidate)) {
+      count++;
+    }
+  }
+  return candidate;
 }
 
-uint64_t nextPrime(uint64_t value) {
-  // вставьте код функции
-  return 2;
+uint64t nextPrime(uint64t value) {
+  value++;
+  while (!isPrime(value)) {
+    value++;
+  }
+  return value;
 }
 
-uint64_t sumPrime(uint64_t hbound) {
-  // вставьте код функции
-  return 2;
+uint64t sumOfPrimes(uint64t upperBound) {
+  uint64_t totalSum = 0;
+  for (uint64_t number = 2; number < upperBound; number++) {
+    if (isPrime(number)) {
+      totalSum += number;
+    }
+  }
+  return totalSum;
 }
 
-uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  // вставьте код функции
-  return 1;
+uint64t countTwinPrimes(uint64t lowerBound, uint64_t upperBound) {
+  uint64_t count = 0;
+  uint64_t previousPrime = 0;
+
+  for (uint64_t number = lowerBound; number < upperBound; number++) {
+    if (isPrime(number)) {
+      if (previousPrime != 0 && number - previousPrime == 2) {
+        count++;
+      }
+      previousPrime = number;
+    }
+  }
+  return count;
 }
