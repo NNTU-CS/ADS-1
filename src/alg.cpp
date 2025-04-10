@@ -12,7 +12,7 @@ bool isPrime(uint64_t number) {
 
 uint64t nthPrime(uint64t n) {
   uint64_t count = 0;
-  uint64_t candidate = 1; // Начинаем с 1, так как будем увеличивать на 1 сразу
+  uint64_t candidate = 1;
 
   if (n < 2) return 0;
   while (count < n) {
