@@ -2,55 +2,68 @@
 #include <cstdint>
 #include "alg.h"
 
-uint64_t collatzMaxValue(uint64_t number) {
-    uint64_t highest = number;
+bool checkPrime(uint64_t value) {
+    if (value < 2) {
+        return false;
+    }
 
-    while (number != 1) {
-        if (number > highest) {
-            highest = number;
-        }
-
-        if (number % 2 == 0) {
-            number /= 2;
-        } else {
-            number = number * 3 + 1;
+    for (uint64_t test = 2; test * test <= value; ++test) {
+        if (value % test == 0) {
+            return false;
         }
     }
 
-    return highest;
+    return true;
 }
 
-unsigned int collatzLen(uint64_t value) {
-    unsigned int count = 1;
+uint64_t nPrime(uint64_t targetIndex) {
+    uint64_t found = 0;
+    uint64_t current = 1;
 
-    while (value != 1) {
-        if (value % 2 == 0) {
-            value /= 2;
-        } else {
-            value = value * 3 + 1;
+    while (found < targetIndex) {
+        ++current;
+        if (checkPrime(current)) {
+            ++found;
         }
-        ++count;
     }
 
-    return count;
+    return current;
 }
 
-unsigned int seqCollatz(
-    unsigned int* outLength,
-    uint64_t from,
-    uint64_t to
-) {
-    unsigned int result = 0;
-    *outLength = 0;
+uint64_t nextPrime(uint64_t from) {
+    uint64_t next = from + 1;
 
-    for (uint64_t i = from; i <= to; ++i) {
-        unsigned int length = collatzLen(i);
+    while (!checkPrime(next)) {
+        ++next;
+    }
 
-        if (length > *outLength) {
-            *outLength = length;
-            result = static_cast<unsigned int>(i);
+    return next;
+}
+
+uint64_t sumPrime(uint64_t upperLimit) {
+    uint64_t sum = 0;
+
+    for (uint64_t val = 2; val < upperLimit; ++val) {
+        if (checkPrime(val)) {
+            sum += val;
         }
     }
 
-    return result;
+    return sum;
+}
+
+uint64_t twinPrimes(uint64_t low, uint64_t high) {
+    uint64_t twinPairs = 0;
+    uint64_t lastPrime = 0;
+
+    for (uint64_t i = low; i < high; ++i) {
+        if (checkPrime(i)) {
+            if (lastPrime && i - lastPrime == 2) {
+                ++twinPairs;
+            }
+            lastPrime = i;
+        }
+    }
+
+    return twinPairs;
 }
