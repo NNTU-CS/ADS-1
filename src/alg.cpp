@@ -8,9 +8,9 @@ bool checkPrime(uint64_t value) {
     if (value % el == 0) koef += 1;
   }
   if (koef == 1) {
-    return 1;
+    return true;
   } else {
-    return 0;
+    return false;
   }
 }
 
@@ -36,7 +36,7 @@ uint64_t nextPrime(uint64_t value) {
 uint64_t sumPrime(uint64_t hbound) {
   uint64_t el = 2, sum = 0;
   while (el < hbound) {
-    if (checkPrime(i)) {
+    if (checkPrime(el)) {
       sum += el;
     }
     el += 1;
