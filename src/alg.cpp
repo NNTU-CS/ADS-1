@@ -4,12 +4,15 @@
 
 
 bool checkPrime(uint64_t value) {
-  if (value < 2) return false;   
-  if (value == 2 or value == 3) return true; 
-  if (value % 2 == 0 or value % 3 == 0) return false;
+  if (value < 2) return false;
+  if (value == 2 || value == 3) return true; 
+  if (value % 2 == 0 || value % 3 == 0) return false;
   for (uint64_t i = 2; i * i <= value; ++i) {
-    if (value % i == 0) return false;}
-      return true;
+    if (value % i == 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 
@@ -23,7 +26,6 @@ uint64_t nPrime(uint64_t n) {
         }
     }
     return num;
-}
 }
 
   uint64_t nextPrime(uint64_t value) {
