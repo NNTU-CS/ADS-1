@@ -32,17 +32,17 @@ uint64_t nextPrime(uint64_t value) {
   return value;
 }
 
-uint64_t sumPrime(uint64_t hbound){
+uint64_t sumPrime(uint64_t hbound) {
   uint64_t sum = 0;
   uint64_t value = 2;
-  while (value < hbound){
+  while (value < hbound) {
     sum += value;
     value = nextPrime(value);
   }
   return sum;
 }
 
-uint64_t twinPrimes(uint64_t lbound, uint64_t hbound){
+uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   int count = 0;
   for (int value = lbound; value < hbound; value = nextPrime(value)) {
     if ((nextPrime(value) < hbound) && (nextPrime(value) - value == 2)) {
