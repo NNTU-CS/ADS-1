@@ -1,72 +1,63 @@
 // Copyright 2022 NNTU-CS
+#include "alg.h"
+#include <math.h>
 #include <cstdint>
-#include <cmath>
 
 bool checkPrime(uint64_t value) {
-  if (value < 2) return false;
-  if (value == 2) return true;
-  if (value % 2 == 0) return false;
-  for (uint64_t i = 3; i * i <= value; i += 2) {
-    if (value % i == 0) return false;
+    for (uint64_t i = 2; i <= sqrt(value); i++) {
+        if (value % i == 0) {
+      return false;
+    }
   }
   return true;
 }
-
 uint64_t nPrime(uint64_t n) {
-  if (n == 0) return 0;
-  uint64_t count = 0;
-  uint64_t num = 1;
-  while (count < n) {
-    num++;
+  uint64_t count = 0, num = 2;
+    while (true) {
     if (checkPrime(num)) {
       count++;
+      if (count == n) return num;
     }
+    num++;
   }
-  return num;
 }
-
 uint64_t nextPrime(uint64_t value) {
-  if (value < 2) return 2;
-  uint64_t candidate = value + 1;
-  if (candidate % 2 == 0) {
-    candidate++;
-  }
-  while (true) {
-    if (checkPrime(candidate)) {
-      return candidate;
+    for (uint64_t i = value + 1; ; i++) {
+        if (checkPrime(i)) {
+      return i;
     }
-    candidate += 2;
   }
 }
-
 uint64_t sumPrime(uint64_t hbound) {
-  uint64_t sum = 0;
-  for (uint64_t i = 2; i < hbound; i++) {
-    if (checkPrime(i)) {
-      sum += i;
-    }
+  u_int64_t summary = 0, current = 2;
+    for (; current < hbound;) {
+    summary += current;
+    current = nextPrime(current);
   }
-  return sum;
+  return summary;
 }
-
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  uint64_t count = 0;
-  uint64_t last_prime = 0;
-  if (lbound <= 2) {
-    if (hbound > 3 && checkPrime(3)) {
-      last_prime = 3;
-    }
-    lbound = 3;
-  } else if (lbound % 2 == 0) {
-    lbound++;
+  uint64_t count = 0, current = 2;
+    if (lbound >= hbound) {
+    return 0;
   }
-  for (uint64_t i = lbound; i < hbound; i += 2) {
-    if (checkPrime(i)) {
-      if (i - last_prime == 2) {
-        count++;
+    if (checkPrime(lbound)) {
+    current = lbound;
+    } else {
+      current  = nextPrime(lbound);
+    }
+    while (current < hbound) {
+      uint64_t first = current;
+      uint64_t second = nextPrime(current);
+        if (second >= hbound) {
+        break;
       }
-      last_prime = i;
+        if (second - first == 2) {
+        count++;
+        current = second;
+        } else {
+          current = second;
+        }
+      }
+      return count;
     }
-  }
-  return count;
-}
