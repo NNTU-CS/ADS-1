@@ -50,23 +50,23 @@ uint64_t sumPrime(uint64_t hbound) {
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
-  uint64_t count = 0;
-  uint64_t last_prime = 0;
-  if (lbound <= 2) {
-    if (hbound > 3 && checkPrime(3)) {
-      last_prime = 3;
-    }
-    lbound = 3;
-  } else if (lbound % 2 == 0) {
-    lbound++;
-  }
-  for (uint64_t i = lbound; i < hbound; i += 2) {
-    if (checkPrime(i)) {
-      if (i - last_prime == 2) {
-        count++;
+      uint64_t count = 0;
+      uint64_t last_prime = 0;
+      if (lbound <= 2) {
+            if (hbound > 3 && checkPrime(3)) {
+                  last_prime = 3;
+            }
+            lbound = 3;
+      } else if (lbound % 2 == 0) {
+            lbound++;
       }
-      last_prime = i;
-    }
-  }
-  return count;
+      for (uint64_t i = lbound; i < hbound; i += 2) {
+            if (checkPrime(i)) {
+                  if (i - last_prime == 2) {
+                        count++;
+                  }
+                  last_prime = i;
+            }
+      }
+      return count;
 }
