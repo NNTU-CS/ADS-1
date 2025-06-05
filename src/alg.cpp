@@ -41,7 +41,7 @@ uint64_t sumPrime(uint64_t hbound) {
         sum += first;
         first = nextPrime(first);
     }
-    return sumP;
+    return sum;
 }
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
