@@ -1,4 +1,4 @@
-// Copyright 2025 Darwitle
+// Copyright 2025 darwitle
 
 #include <cstdint>
 #include <cmath>
@@ -54,3 +54,4 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
     }
     return count;
 }
+
