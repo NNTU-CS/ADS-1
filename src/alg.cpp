@@ -2,7 +2,6 @@
 #include <cstdint>
 #include "alg.h"
 
-// cppcheck-suppress unusedFunction
 bool checkPrime(uint64_t value) {
   if (value < 2) return false;
   if (value == 2 || value == 3) return true;
