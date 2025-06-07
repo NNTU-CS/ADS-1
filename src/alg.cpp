@@ -1,3 +1,4 @@
+// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include <cmath>
 #include "alg.h"
@@ -48,3 +49,4 @@ uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
       count++;
   return count;
 }
+
