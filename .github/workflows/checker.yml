@@ -1,12 +1,1 @@
-# This is a basic workflow to help you get started with Actions
 
-name: checker
-on: [push, pull_request]
-jobs:
-  checker:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
-    - run: pwd
-    - run: python3 /home/runner/work/ADS-1/ADS-1/src/checker.py /home/runner/work/ADS-1/ADS-1/src/alg.cpp 2
