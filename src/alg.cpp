@@ -17,6 +17,7 @@ uint64_t nPrime(uint64_t n) {
   uint64_t i = 0, j = 2;
   while (true) {
     if (checkPrime(j)) {
+      i++;
       if (i == n) return j;
     }
     j++;
