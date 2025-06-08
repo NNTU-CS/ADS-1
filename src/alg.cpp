@@ -1,10 +1,11 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
+#include <cmath>
 #include "alg.h"
 #include "PrimeLibrary.h"
 bool PrimeLibrary::checkPrime(uint64_t value) {
     if (value < 2) return false;
-    for (uint64_t i = 2; i <= sqrt(value); ++i) {
+    for (uint64_t i = 2; i * i <= value; ++i) {
         if (value % i == 0) return false;
     }
     return true;
@@ -22,6 +23,7 @@ uint64_t PrimeLibrary::nPrime(uint64_t n) {
     return number;
 }
 uint64_t PrimeLibrary::nextPrime(uint64_t value) {
+    if (value < 2) return 2;
     do {
         ++value;
     } while (!checkPrime(value));
@@ -39,6 +41,7 @@ uint64_t PrimeLibrary::sumPrime(uint64_t hbound) {
 uint64_t PrimeLibrary::twinPrimes(uint64_t lbound, uint64_t hbound) {
     uint64_t count = 0;
     uint64_t lastPrime = 0;
+    if (lbound < 2) lbound = 2;
     for (uint64_t i = lbound; i < hbound; ++i) {
         if (checkPrime(i)) {
             if (lastPrime != 0 && i - lastPrime == 2) {
