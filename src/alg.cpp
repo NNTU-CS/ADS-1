@@ -3,6 +3,7 @@
 #include "alg.h"
 
 
+
 bool checkPrime(uint64_t value) {
     if (value < 2) return false;
     for (int i = 2; i * i <= value; i++) {
